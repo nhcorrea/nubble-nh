@@ -1,4 +1,8 @@
-import {Text as RNText, TextProps as RNTextProps, TextStyle} from 'react-native'
+import {
+  Text as RNText,
+  TextProps as RNTextProps,
+  TextStyle,
+} from 'react-native'
 
 interface TextProps extends RNTextProps {
   preset: TextVariants
@@ -18,7 +22,7 @@ export const Text = ({
 }: TextProps) => {
   const fontFamily = getFontFamily(preset, bold, italic, semiBold)
   return (
-    <RNText style={[$fontSizes[preset], {fontFamily}, style]} {...rest}>
+    <RNText style={[$fontSizes[preset], { fontFamily }, style]} {...rest}>
       {children}
     </RNText>
   )
