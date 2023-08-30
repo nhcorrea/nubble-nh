@@ -11,7 +11,7 @@ interface TextProps extends RNTextProps {
   semiBold?: boolean
 }
 
-export const Text = ({
+export function Text({
   children,
   preset,
   bold = false,
@@ -19,7 +19,7 @@ export const Text = ({
   semiBold = false,
   style,
   ...rest
-}: TextProps) => {
+}: TextProps) {
   const fontFamily = getFontFamily(preset, bold, italic, semiBold)
   return (
     <RNText style={[$fontSizes[preset], { fontFamily }, style]} {...rest}>
