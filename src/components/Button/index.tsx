@@ -26,6 +26,7 @@ import {
 } from '@shopify/restyle'
 import { ThemeType } from '../../theme'
 import { Text } from '../Text'
+import { ButtonPresets, buttonPresets } from './buttonPresets'
 
 type RestyleProps = BackgroundColorProps<ThemeType> &
   BackgroundColorShorthandProps<ThemeType> &
@@ -36,7 +37,7 @@ type RestyleProps = BackgroundColorProps<ThemeType> &
   ShadowProps<ThemeType> &
   BorderProps<ThemeType>
 
-type ButtonContainerProps = RNTouchableOpacityProps & RestyleProps
+export type ButtonContainerProps = RNTouchableOpacityProps & RestyleProps
 
 const ButtonContainer = createRestyleComponent<ButtonContainerProps, ThemeType>(
   [
@@ -51,23 +52,38 @@ const ButtonContainer = createRestyleComponent<ButtonContainerProps, ThemeType>(
   ],
   TouchableOpacity,
 )
-interface ButtonProps {
+
+interface ButtonProps extends ButtonContainerProps {
   title: string
   loading?: boolean
+  preset?: ButtonPresets
+  disabled?: boolean
 }
-export function Button({ title, loading }: ButtonProps) {
-  const theme = useTheme<ThemeType>()
+export function Button({
+  title,
+  loading,
+  preset = 'filled',
+  disabled,
+  ...ButtonContainerProps
+}: ButtonProps) {
+  const { colors } = useTheme<ThemeType>()
+  const ButtonUI = disabled
+    ? buttonPresets[preset].disabled
+    : buttonPresets[preset].default
+
   return (
     <ButtonContainer
-      backgroundColor="greenPrimary"
+      disabled={disabled || loading}
+      {...ButtonUI.container}
       height={50}
       borderRadius="s16"
       justifyContent="center"
-      alignItems="center">
+      alignItems="center"
+      {...ButtonContainerProps}>
       {loading ? (
-        <ActivityIndicator size="small" color={theme.colors.primaryContrast} />
+        <ActivityIndicator size="large" color={colors[ButtonUI.content]} />
       ) : (
-        <Text style={{ color: '#fff' }} preset="paragraphMedium">
+        <Text color={ButtonUI.content} variant="paragraphMediumBold">
           {title}
         </Text>
       )}
