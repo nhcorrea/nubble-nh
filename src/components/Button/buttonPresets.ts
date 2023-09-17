@@ -8,13 +8,12 @@ interface ButtonUI {
 
 export type ButtonPresets = 'filled' | 'outline'
 
-export const buttonPresets: Record<
-  ButtonPresets,
-  {
-    default: ButtonUI
-    disabled: ButtonUI
-  }
-> = {
+interface ButtonUIModel {
+  default: ButtonUI
+  disabled: ButtonUI
+}
+
+export const buttonPresets: Record<ButtonPresets, ButtonUIModel> = {
   filled: {
     default: {
       container: {

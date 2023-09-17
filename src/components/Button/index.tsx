@@ -22,11 +22,11 @@ import {
   LayoutProps,
   ShadowProps,
   BorderProps,
-  useTheme,
 } from '@shopify/restyle'
 import { ThemeType } from '../../theme'
 import { Text } from '../Text'
 import { ButtonPresets, buttonPresets } from './buttonPresets'
+import { useAppTheme } from '../../hooks/useAppTheme'
 
 type RestyleProps = BackgroundColorProps<ThemeType> &
   BackgroundColorShorthandProps<ThemeType> &
@@ -66,19 +66,19 @@ export function Button({
   disabled,
   ...ButtonContainerProps
 }: ButtonProps) {
-  const { colors } = useTheme<ThemeType>()
+  const { colors } = useAppTheme()
   const ButtonUI = disabled
     ? buttonPresets[preset].disabled
     : buttonPresets[preset].default
 
   return (
     <ButtonContainer
-      disabled={disabled || loading}
-      {...ButtonUI.container}
       height={50}
       borderRadius="s16"
       justifyContent="center"
       alignItems="center"
+      disabled={disabled || loading}
+      {...ButtonUI.container}
       {...ButtonContainerProps}>
       {loading ? (
         <ActivityIndicator size="large" color={colors[ButtonUI.content]} />
