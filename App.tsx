@@ -5,10 +5,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 export function App(): JSX.Element {
   return (
-    <SafeAreaProvider>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
         <Login />
-      </ThemeProvider>
-    </SafeAreaProvider>
+      </SafeAreaProvider>
+    </ThemeProvider>
   )
 }

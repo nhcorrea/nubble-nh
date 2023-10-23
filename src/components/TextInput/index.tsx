@@ -13,9 +13,10 @@ import { useAppTheme } from '../../hooks/useAppTheme'
 
 interface Props extends RNTextInputProps {
   label: 'Email' | 'Senha'
+  errorMessage?: string
 }
 
-export function TextInput({ label, ...props }: Props) {
+export function TextInput({ label, errorMessage, ...props }: Props) {
   const inputRef = useRef<RNTextInput>(null)
   const { colors } = useAppTheme()
 
@@ -29,9 +30,9 @@ export function TextInput({ label, ...props }: Props) {
         </Text>
         <Box
           padding="s16"
-          borderColor="gray4"
+          borderColor={errorMessage ? 'redErrorPrimary' : 'gray4'}
           borderRadius="s12"
-          borderWidth={1}>
+          borderWidth={errorMessage ? 2 : 1}>
           <RNTextInput
             ref={inputRef}
             keyboardType={label === 'Email' ? 'email-address' : 'default'}
@@ -41,6 +42,11 @@ export function TextInput({ label, ...props }: Props) {
             {...props}
           />
         </Box>
+        {errorMessage ? (
+          <Text variant="paragraphSmallBold" color="redErrorPrimary">
+            {errorMessage}
+          </Text>
+        ) : null}
       </Box>
     </Pressable>
   )
