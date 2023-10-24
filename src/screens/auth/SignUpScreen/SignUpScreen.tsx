@@ -7,7 +7,7 @@ export function SignUpScreen() {
     <ScreenContainer canGoBack>
       <Box flex={1} mt="s24" gap="s32">
         <Text variant="headingLarge" color="backgroundContrast">
-          Criar uma conta
+          Criar uma conta;
         </Text>
         <Box gap="s16">
           <TextInput placeholder="@" label="Seu username" />
