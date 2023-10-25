@@ -14,7 +14,7 @@ import { useAppTheme } from '../../hooks/useAppTheme'
 import { BoxProps } from '@shopify/restyle'
 import { ThemeType } from '../../theme'
 
-interface Props extends RNTextInputProps {
+export interface TextInputProps extends RNTextInputProps {
   label: 'Email' | 'Senha' | string
   errorMessage?: string
   RightComponent?: JSX.Element
@@ -27,8 +27,7 @@ export function TextInput({
   RightComponent,
   boxProps,
   ...props
-}: Props) {
-  const [isSecure, seIsSecure] = useState(true)
+}: TextInputProps) {
   const inputRef = useRef<RNTextInput>(null)
   const { colors } = useAppTheme()
 
@@ -50,8 +49,6 @@ export function TextInput({
             borderWidth={errorMessage ? 2 : 1}>
             <RNTextInput
               ref={inputRef}
-              keyboardType={label === 'Email' ? 'email-address' : 'default'}
-              secureTextEntry={label === 'Senha' && isSecure}
               placeholderTextColor={colors.gray2}
               style={{
                 color: colors.backgroundContrast,

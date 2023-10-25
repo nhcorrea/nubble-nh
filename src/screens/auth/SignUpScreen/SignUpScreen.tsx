@@ -1,5 +1,5 @@
 import { Box, Button, Text, TextInput } from '../../../components'
-import { Icon } from '../../../components/Icon'
+import { PasswordInput } from '../../../components/PasswordInput/PasswordInput'
 import { ScreenContainer } from '../../../components/ScreenContainer'
 
 export function SignUpScreen() {
@@ -15,12 +15,12 @@ export function SignUpScreen() {
             placeholder="Digite seu nome completo"
             label="Nome Completo"
           />
-          <TextInput placeholder="Digite seu e-mail" label="E-mail" />
           <TextInput
-            placeholder="Digite sua senha"
-            label="Senha"
-            RightComponent={<Icon name="EyeOn" color="gray2" />}
+            placeholder="Digite seu e-mail"
+            label="E-mail"
+            keyboardType="email-address"
           />
+          <PasswordInput placeholder="Digite sua senha" label="Senha" />
         </Box>
         <Button mt="s16" title="Criar uma conta" />
       </Box>

@@ -27,6 +27,7 @@ import {
 } from '../../assets/icons'
 import { ThemeType } from '../../theme'
 import { useAppTheme } from '../../hooks/useAppTheme'
+import { Pressable } from 'react-native'
 
 const IconRegistry = {
   Arrow: ArrowIcon,
@@ -64,15 +65,25 @@ interface IconProps {
   color?: keyof ThemeType['colors']
   widht?: string
   height?: string
+  onPress?: () => void
 }
 
 export function Icon({
   name,
   color = 'backgroundContrast',
+  onPress,
   ...props
 }: IconProps) {
   const SVGIcon = IconRegistry[name]
   const { colors } = useAppTheme()
+
+  if (onPress) {
+    return (
+      <Pressable onPress={onPress} hitSlop={12}>
+        <SVGIcon color={colors[color]} {...props} />
+      </Pressable>
+    )
+  }
 
   return <SVGIcon color={colors[color]} {...props} />
 }
