@@ -5,7 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "lint": "prettier ./src --write && eslint ./src",
     "start": "react-native start",
     "test": "jest",
     "utils:androidClean": "cd android && ./gradlew clean && rm -rf ./build && cd ..",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.16",
     "@shopify/restyle": "^2.4.2",
     "react": "18.2.0",
     "react-native": "0.72.6",

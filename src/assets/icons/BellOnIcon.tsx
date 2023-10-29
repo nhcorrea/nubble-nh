@@ -1,5 +1,5 @@
-import { Svg, Path, Circle } from 'react-native-svg'
-import { IconProps } from './icon'
+import {Svg, Path, Circle} from 'react-native-svg'
+import {IconProps} from './icon'
 
 export function BellOnIcon({
   color = '#000',

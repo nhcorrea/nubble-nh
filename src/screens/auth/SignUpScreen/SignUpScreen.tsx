@@ -1,8 +1,25 @@
-import { Box, Button, Text, TextInput } from '../../../components'
-import { PasswordInput } from '../../../components/PasswordInput/PasswordInput'
-import { ScreenContainer } from '../../../components/ScreenContainer'
+import {
+  Box,
+  Button,
+  Text,
+  TextInput,
+  ScreenContainer,
+  PasswordInput,
+} from '../../../components'
+import {useResetNavigationReset} from '../../../hooks/useResetNavigationReset'
 
 export function SignUpScreen() {
+  const {reset} = useResetNavigationReset()
+  function submitForm() {
+    reset({
+      title: 'Sua conta foi criada com sucesso!',
+      description: 'Agora é só fazer login na nossa plataforma',
+      icon: {
+        name: 'CheckRound',
+        color: 'success',
+      },
+    })
+  }
   return (
     <ScreenContainer canGoBack>
       <Box flex={1} mt="s24" gap="s32">
@@ -22,7 +39,7 @@ export function SignUpScreen() {
           />
           <PasswordInput placeholder="Digite sua senha" label="Senha" />
         </Box>
-        <Button mt="s16" title="Criar uma conta" />
+        <Button mt="s16" title="Criar uma conta" onPress={submitForm} />
       </Box>
     </ScreenContainer>
   )

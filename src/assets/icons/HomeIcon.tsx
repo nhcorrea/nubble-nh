@@ -1,5 +1,5 @@
-import { Svg, Path } from 'react-native-svg'
-import { IconProps } from './icon'
+import {Svg, Path} from 'react-native-svg'
+import {IconProps} from './icon'
 
 export function HomeIcon({
   color = '#000',

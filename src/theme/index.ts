@@ -1,7 +1,7 @@
-import { createTheme } from '@shopify/restyle'
+import {createTheme} from '@shopify/restyle'
 
-import { fontFamily, typography } from './typography'
-import { pallete } from './pallete'
+import {fontFamily, typography} from './typography'
+import {pallete} from './pallete'
 
 export const theme = createTheme({
   colors: {

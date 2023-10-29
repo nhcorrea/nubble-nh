@@ -1,10 +1,12 @@
-import { Box } from '../Box'
-import { useAppSafeArea } from '../../hooks/useAppSafeArea'
-import { Icon } from '../Icon'
-import { Text } from '../Text'
-import { KeyboardAvoidingView, Platform, StyleSheet } from 'react-native'
-import { ScrollViewContainer, ViewContainer } from './Containers/Containers'
-import { useAppTheme } from '../../hooks/useAppTheme'
+import {Box} from '../Box/Box'
+import {useAppSafeArea} from '../../hooks/useAppSafeArea'
+import {Icon} from '../Icon/Icon'
+import {Text} from '../Text/Text'
+import {KeyboardAvoidingView, Platform, StyleSheet} from 'react-native'
+import {ScrollViewContainer, ViewContainer} from './Containers/Containers'
+import {useAppTheme} from '../../hooks/useAppTheme'
+import {useNavigation} from '@react-navigation/native'
+import {ButtonContainer} from '../Button/Button'
 
 interface Props {
   children: React.ReactNode
@@ -17,10 +19,11 @@ export function ScreenContainer({
   scrollEnabled = false,
   canGoBack = false,
 }: Props) {
-  const { bottom, top } = useAppSafeArea()
-  const { colors } = useAppTheme()
-
+  const {bottom, top} = useAppSafeArea()
+  const {colors} = useAppTheme()
+  const navigation = useNavigation()
   const Container = scrollEnabled ? ScrollViewContainer : ViewContainer
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -35,10 +38,13 @@ export function ScreenContainer({
           paddingHorizontal="s24"
           backgroundColor="background">
           {canGoBack ? (
-            <Box flexDirection="row" gap="s8">
+            <ButtonContainer
+              onPress={navigation.goBack}
+              flexDirection="row"
+              gap="s8">
               <Icon name="Arrow" color="primary" />
               <Text variant="paragraphMedium">Voltar</Text>
-            </Box>
+            </ButtonContainer>
           ) : null}
           {children}
         </Box>

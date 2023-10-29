@@ -23,10 +23,10 @@ import {
   ShadowProps,
   BorderProps,
 } from '@shopify/restyle'
-import { ThemeType } from '../../theme'
-import { Text } from '../Text'
-import { ButtonPresets, buttonPresets } from './buttonPresets'
-import { useAppTheme } from '../../hooks/useAppTheme'
+import {ThemeType} from '../../theme'
+import {Text} from '../Text/Text'
+import {ButtonPresets, buttonPresets} from './buttonPresets'
+import {useAppTheme} from '../../hooks/useAppTheme'
 
 type RestyleProps = BackgroundColorProps<ThemeType> &
   BackgroundColorShorthandProps<ThemeType> &
@@ -39,7 +39,10 @@ type RestyleProps = BackgroundColorProps<ThemeType> &
 
 export type ButtonContainerProps = RNTouchableOpacityProps & RestyleProps
 
-const ButtonContainer = createRestyleComponent<ButtonContainerProps, ThemeType>(
+export const ButtonContainer = createRestyleComponent<
+  ButtonContainerProps,
+  ThemeType
+>(
   [
     backgroundColor,
     backgroundColorShorthand,
@@ -66,7 +69,7 @@ export function Button({
   disabled,
   ...ButtonContainerProps
 }: ButtonProps) {
-  const { colors } = useAppTheme()
+  const {colors} = useAppTheme()
   const ButtonUI = disabled
     ? buttonPresets[preset].disabled
     : buttonPresets[preset].default

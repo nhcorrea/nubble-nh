@@ -1,18 +1,17 @@
-import { Box } from '../Box'
-import { Text } from '../Text'
+import {Box} from '../Box/Box'
+import {Text} from '../Text/Text'
 import {
   Pressable,
   TextInput as RNTextInput,
   TextInputProps as RNTextInputProps,
   StyleSheet,
-  TouchableOpacity,
 } from 'react-native'
-import { useRef, useState } from 'react'
+import {useRef} from 'react'
 
-import { fontFamily, typography } from '../../theme/typography'
-import { useAppTheme } from '../../hooks/useAppTheme'
-import { BoxProps } from '@shopify/restyle'
-import { ThemeType } from '../../theme'
+import {fontFamily, typography} from '../../theme/typography'
+import {useAppTheme} from '../../hooks/useAppTheme'
+import {BoxProps} from '@shopify/restyle'
+import {ThemeType} from '../../theme'
 
 export interface TextInputProps extends RNTextInputProps {
   label: 'Email' | 'Senha' | string
@@ -29,10 +28,9 @@ export function TextInput({
   ...props
 }: TextInputProps) {
   const inputRef = useRef<RNTextInput>(null)
-  const { colors } = useAppTheme()
+  const {colors} = useAppTheme()
 
   const focusInput = () => inputRef.current?.focus()
-  const handleSecureTextEntry = () => seIsSecure(prev => !prev)
 
   return (
     <Box {...boxProps}>
@@ -56,9 +54,7 @@ export function TextInput({
               }}
               {...props}
             />
-            <TouchableOpacity onPress={handleSecureTextEntry}>
-              {RightComponent}
-            </TouchableOpacity>
+            {RightComponent}
           </Box>
           {errorMessage ? (
             <Text variant="paragraphSmallBold" color="redErrorPrimary">

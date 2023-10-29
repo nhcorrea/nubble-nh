@@ -24,10 +24,12 @@ import {
   SearchIcon,
   SettingsIcon,
   TrashIcon,
+  CheckRoundIcon,
+  MessageRoundIcon,
 } from '../../assets/icons'
-import { ThemeType } from '../../theme'
-import { useAppTheme } from '../../hooks/useAppTheme'
-import { Pressable } from 'react-native'
+import {ThemeType} from '../../theme'
+import {useAppTheme} from '../../hooks/useAppTheme'
+import {Pressable} from 'react-native'
 
 const IconRegistry = {
   Arrow: ArrowIcon,
@@ -39,6 +41,7 @@ const IconRegistry = {
   Chat: ChatIcon,
   Check: CheckIcon,
   ChevronRight: ChevronRightIcon,
+  CheckRound: CheckRoundIcon,
   Comment: CommentIcon,
   EyeOff: EyeOffIcon,
   EyeOn: EyeOnIcon,
@@ -49,6 +52,7 @@ const IconRegistry = {
   HomeFill: HomeFillIcon,
   Home: HomeIcon,
   Message: MessageIcon,
+  MessageRound: MessageRoundIcon,
   NewPost: NewPostIcon,
   ProfileFill: ProfileFillIcon,
   Profile: ProfileIcon,
@@ -59,7 +63,7 @@ const IconRegistry = {
 
 type IconRegistryType = typeof IconRegistry
 
-interface IconProps {
+export interface IconProps {
   name: keyof IconRegistryType
   size?: string
   color?: keyof ThemeType['colors']
@@ -75,7 +79,7 @@ export function Icon({
   ...props
 }: IconProps) {
   const SVGIcon = IconRegistry[name]
-  const { colors } = useAppTheme()
+  const {colors} = useAppTheme()
 
   if (onPress) {
     return (
