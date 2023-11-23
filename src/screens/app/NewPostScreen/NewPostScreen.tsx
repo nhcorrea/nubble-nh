@@ -3,12 +3,12 @@ import React from 'react'
 import {Button, ScreenContainer, Text} from '@components'
 import {AppBottomTabScreenProps} from '@routes'
 
-export function HomeScreen({
+export function NewPostScreen({
   navigation,
-}: AppBottomTabScreenProps<'HomeScreen'>) {
+}: AppBottomTabScreenProps<'NewPostScreen'>) {
   return (
     <ScreenContainer>
-      <Text variant="headingMedium">HomeScreen</Text>
+      <Text variant="headingMedium">NewPostScreen</Text>
       <Button
         onPress={() => navigation.navigate('SettingsScreen')}
         title="Settings"

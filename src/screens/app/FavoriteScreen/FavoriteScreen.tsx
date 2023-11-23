@@ -3,14 +3,14 @@ import React from 'react'
 import {Button, ScreenContainer, Text} from '@components'
 import {AppBottomTabScreenProps} from '@routes'
 
-export function HomeScreen({
+export function FavoriteScreen({
   navigation,
-}: AppBottomTabScreenProps<'HomeScreen'>) {
+}: AppBottomTabScreenProps<'FavoriteScreen'>) {
   return (
     <ScreenContainer>
-      <Text variant="headingMedium">HomeScreen</Text>
+      <Text variant="headingMedium">FavoriteScreen</Text>
       <Button
-        onPress={() => navigation.navigate('SettingsScreen')}
+        onPress={() => navigation.navigate('FavoriteScreen')}
         title="Settings"
       />
     </ScreenContainer>

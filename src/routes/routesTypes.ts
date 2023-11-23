@@ -4,6 +4,7 @@ import {IconProps} from '@components'
 
 type RouteNamesAuth = keyof AuthStackParamList
 type RouteNamesApp = keyof AppStackParamList
+type RouteNameBottomTab = keyof AppBottomTabParamList
 
 export type AuthStackParamList = {
   LoginScreen: undefined
@@ -17,15 +18,25 @@ export type AuthStackParamList = {
 }
 
 export type AppStackParamList = {
-  HomeScreen: undefined
+  BottomTabStack: undefined
   SettingsScreen: undefined
+}
+
+export type AppBottomTabParamList = {
+  HomeScreen: undefined
+  NewPostScreen: undefined
+  FavoriteScreen: undefined
+  MyProfileScreen: undefined
 }
 
 export type AuthScreenProps<T extends RouteNamesAuth> = NativeStackScreenProps<
   AuthStackParamList,
   T
 >
+
 export type AppScreenProps<T extends RouteNamesApp> = NativeStackScreenProps<
   AppStackParamList,
   T
 >
+export type AppBottomTabScreenProps<T extends RouteNameBottomTab> =
+  NativeStackScreenProps<AppBottomTabParamList & AppStackParamList, T>
