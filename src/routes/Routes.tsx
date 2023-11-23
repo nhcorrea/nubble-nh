@@ -30,7 +30,7 @@ export function Router() {
       <Stack.Navigator
         initialRouteName="LoginScreen"
         screenOptions={{headerShown: false, fullScreenGestureEnabled: true}}>
-        <Stack.Screen name="miganzudfuasdja" component={LoginScreen} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
         <Stack.Screen name="SuccessScreen" component={SuccessScreen} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
