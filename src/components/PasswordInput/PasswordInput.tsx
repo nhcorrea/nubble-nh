@@ -1,8 +1,9 @@
 import {useState} from 'react'
 import {Icon} from '../Icon/Icon'
 import {TextInput, TextInputProps} from '../TextInput/TextInput'
+import React from 'react'
 
-type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>
+export type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>
 
 export function PasswordInput({...props}: PasswordInputProps) {
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(true)

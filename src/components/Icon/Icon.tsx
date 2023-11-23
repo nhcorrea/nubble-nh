@@ -30,6 +30,7 @@ import {
 import {ThemeType} from '../../theme'
 import {useAppTheme} from '../../hooks/useAppTheme'
 import {Pressable} from 'react-native'
+import React from 'react'
 
 const IconRegistry = {
   Arrow: ArrowIcon,

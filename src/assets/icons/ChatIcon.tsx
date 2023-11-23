@@ -1,4 +1,5 @@
 import {Svg, Path} from 'react-native-svg'
+import React from 'react'
 import {IconProps} from './icon'
 
 export function ChatIcon({

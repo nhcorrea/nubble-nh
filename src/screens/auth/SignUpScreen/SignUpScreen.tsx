@@ -1,15 +1,12 @@
-import {
-  Box,
-  Button,
-  Text,
-  TextInput,
-  ScreenContainer,
-  PasswordInput,
-} from '../../../components'
-import {useResetNavigationReset} from '../../../hooks/useResetNavigationReset'
+import {useForm} from 'react-hook-form'
+import {Box, Button, Text, ScreenContainer, FormTextInput} from '@components'
+import {useResetNavigation} from '@hooks'
+import {SignUpSchema, signUpSchema} from './signUpSchema'
+import React from 'react'
 
+import {zodResolver} from '@hookform/resolvers/zod'
 export function SignUpScreen() {
-  const {reset} = useResetNavigationReset()
+  const {reset} = useResetNavigation()
   function submitForm() {
     reset({
       title: 'Sua conta foi criada com sucesso!',
@@ -20,6 +17,16 @@ export function SignUpScreen() {
       },
     })
   }
+  const {control} = useForm<SignUpSchema>({
+    defaultValues: {
+      name: '',
+      email: '',
+      username: '',
+      password: '',
+    },
+    resolver: zodResolver(signUpSchema),
+    mode: 'onChange',
+  })
   return (
     <ScreenContainer canGoBack>
       <Box flex={1} mt="s24" gap="s32">
@@ -27,17 +34,35 @@ export function SignUpScreen() {
           Criar uma conta
         </Text>
         <Box gap="s16">
-          <TextInput placeholder="@" label="Seu username" />
-          <TextInput
+          <FormTextInput
+            control={control}
+            name="username"
+            placeholder="@"
+            label="Seu username"
+          />
+
+          <FormTextInput
+            control={control}
+            name="name"
+            autoCapitalize="words"
             placeholder="Digite seu nome completo"
             label="Nome Completo"
           />
-          <TextInput
+
+          <FormTextInput
+            control={control}
+            name="email"
             placeholder="Digite seu e-mail"
             label="E-mail"
             keyboardType="email-address"
           />
-          <PasswordInput placeholder="Digite sua senha" label="Senha" />
+
+          <FormTextInput
+            control={control}
+            name="password"
+            placeholder="Digite sua senha"
+            label="Senha"
+          />
         </Box>
         <Button mt="s16" title="Criar uma conta" onPress={submitForm} />
       </Box>

@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["@react-native", "plugin:react/jsx-runtime"],
+  "extends": ["@react-native"],
   "rules": {
     "semi": "off"
   }

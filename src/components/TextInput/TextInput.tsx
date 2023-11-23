@@ -12,6 +12,7 @@ import {fontFamily, typography} from '../../theme/typography'
 import {useAppTheme} from '../../hooks/useAppTheme'
 import {BoxProps} from '@shopify/restyle'
 import {ThemeType} from '../../theme'
+import React from 'react'
 
 export interface TextInputProps extends RNTextInputProps {
   label: 'Email' | 'Senha' | string
@@ -46,6 +47,7 @@ export function TextInput({
             borderRadius="s12"
             borderWidth={errorMessage ? 2 : 1}>
             <RNTextInput
+              autoCapitalize="none"
               ref={inputRef}
               placeholderTextColor={colors.gray2}
               style={{

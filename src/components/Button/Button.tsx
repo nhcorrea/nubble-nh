@@ -27,6 +27,7 @@ import {ThemeType} from '../../theme'
 import {Text} from '../Text/Text'
 import {ButtonPresets, buttonPresets} from './buttonPresets'
 import {useAppTheme} from '../../hooks/useAppTheme'
+import React from 'react'
 
 type RestyleProps = BackgroundColorProps<ThemeType> &
   BackgroundColorShorthandProps<ThemeType> &

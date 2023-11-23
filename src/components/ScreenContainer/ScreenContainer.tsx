@@ -7,6 +7,7 @@ import {ScrollViewContainer, ViewContainer} from './Containers/Containers'
 import {useAppTheme} from '../../hooks/useAppTheme'
 import {useNavigation} from '@react-navigation/native'
 import {ButtonContainer} from '../Button/Button'
+import React from 'react'
 
 interface Props {
   children: React.ReactNode

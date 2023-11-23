@@ -1,15 +1,18 @@
+import {Alert, TouchableOpacity} from 'react-native'
+import {NativeStackScreenProps} from '@react-navigation/native-stack'
+import {RootStackParamList} from '@routes'
+import {useForm} from 'react-hook-form'
 import {
+  FormTextInput,
+  FormPasswordInput,
   Box,
   Button,
   Text,
-  TextInput,
   ScreenContainer,
-  PasswordInput,
-} from '../../../components'
-import {TouchableOpacity} from 'react-native'
-import {NativeStackScreenProps} from '@react-navigation/native-stack'
-import {RootStackParamList} from '../../../routes/Routes'
-
+} from '@components'
+import {LoginSchema, loginSchema} from './loginSchema'
+import {zodResolver} from '@hookform/resolvers/zod'
+import React from 'react'
 type Props = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
 
 export function LoginScreen({navigation}: Props) {
@@ -19,6 +22,17 @@ export function LoginScreen({navigation}: Props) {
   function navigateToForgotPassword() {
     navigation.navigate('ForgotPassword')
   }
+  function submitForm({email, password}: LoginSchema) {
+    Alert.alert(email, password)
+  }
+  const {control, formState, handleSubmit} = useForm<LoginSchema>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    resolver: zodResolver(loginSchema),
+    mode: 'onChange',
+  })
   return (
     <ScreenContainer scrollEnabled>
       <Box gap="s8">
@@ -30,8 +44,16 @@ export function LoginScreen({navigation}: Props) {
         </Text>
       </Box>
       <Box mt="s40" gap="s16">
-        <TextInput label="Email" placeholder="Digite seu e-mail" />
-        <PasswordInput
+        <FormTextInput
+          control={control}
+          name="email"
+          placeholder="Digite seu e-mail"
+          label="Email"
+        />
+
+        <FormPasswordInput
+          name="password"
+          control={control}
           boxProps={{gap: 's4'}}
           label="Senha"
           placeholder="Digite sua senha"
@@ -43,7 +65,11 @@ export function LoginScreen({navigation}: Props) {
         </Text>
       </TouchableOpacity>
       <Box mt="s48" gap="s12">
-        <Button title="Entrar" />
+        <Button
+          disabled={!formState.isValid}
+          onPress={handleSubmit(submitForm)}
+          title="Entrar"
+        />
         <Button
           onPress={navigateToSignUp}
           preset="outline"
