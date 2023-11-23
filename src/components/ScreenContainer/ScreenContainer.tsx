@@ -1,13 +1,16 @@
+import React from 'react'
+import {KeyboardAvoidingView, Platform, StyleSheet} from 'react-native'
+
+import {useNavigation} from '@react-navigation/native'
+
+import {useAppSafeArea, useAppTheme} from '@hooks'
+
 import {Box} from '../Box/Box'
-import {useAppSafeArea} from '../../hooks/useAppSafeArea'
+import {ButtonContainer} from '../Button/Button'
 import {Icon} from '../Icon/Icon'
 import {Text} from '../Text/Text'
-import {KeyboardAvoidingView, Platform, StyleSheet} from 'react-native'
+
 import {ScrollViewContainer, ViewContainer} from './Containers/Containers'
-import {useAppTheme} from '../../hooks/useAppTheme'
-import {useNavigation} from '@react-navigation/native'
-import {ButtonContainer} from '../Button/Button'
-import React from 'react'
 
 interface Props {
   children: React.ReactNode

@@ -1,10 +1,13 @@
-import {useForm} from 'react-hook-form'
-import {Box, Button, Text, ScreenContainer, FormTextInput} from '@components'
-import {useResetNavigation} from '@hooks'
-import {SignUpSchema, signUpSchema} from './signUpSchema'
 import React from 'react'
 
 import {zodResolver} from '@hookform/resolvers/zod'
+import {useForm} from 'react-hook-form'
+
+import {Box, Button, Text, ScreenContainer, FormTextInput} from '@components'
+import {useResetNavigation} from '@hooks'
+
+import {SignUpSchema, signUpSchema} from './signUpSchema'
+
 export function SignUpScreen() {
   const {reset} = useResetNavigation()
   function submitForm() {

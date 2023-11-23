@@ -1,3 +1,6 @@
+import React from 'react'
+import {Pressable} from 'react-native'
+
 import {
   ArrowIcon,
   BellOnIcon,
@@ -26,11 +29,10 @@ import {
   TrashIcon,
   CheckRoundIcon,
   MessageRoundIcon,
-} from '../../assets/icons'
-import {ThemeType} from '../../theme'
-import {useAppTheme} from '../../hooks/useAppTheme'
-import {Pressable} from 'react-native'
-import React from 'react'
+} from '@icons'
+
+import {useAppTheme} from '@hooks'
+import {ThemeType} from '@theme'
 
 const IconRegistry = {
   Arrow: ArrowIcon,

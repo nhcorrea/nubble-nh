@@ -1,7 +1,9 @@
+import React from 'react'
+
 import {Svg, Path} from 'react-native-svg'
+
 import {IconProps} from './icon'
 
-import React from 'react'
 export function CheckIcon({
   color = '#000',
   size = '20',

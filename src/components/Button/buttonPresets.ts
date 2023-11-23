@@ -1,5 +1,6 @@
+import {ThemeType} from '@theme'
+
 import {ButtonContainerProps} from './Button'
-import {ThemeType} from '../../theme'
 
 interface ButtonUI {
   container: ButtonContainerProps

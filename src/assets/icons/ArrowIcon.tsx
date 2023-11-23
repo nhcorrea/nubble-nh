@@ -1,6 +1,8 @@
-import {Svg, Path} from 'react-native-svg'
-import {IconProps} from './icon'
 import React from 'react'
+
+import {Svg, Path} from 'react-native-svg'
+
+import {IconProps} from './icon'
 
 // #TODO: REFATORAR PARTE ICONES E DEIXA EM UM UNICO COMPONENTE ICON
 

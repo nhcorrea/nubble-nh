@@ -1,5 +1,7 @@
-import {Svg, Circle, Path} from 'react-native-svg'
 import React from 'react'
+
+import {Svg, Circle, Path} from 'react-native-svg'
+
 import {IconProps} from './icon'
 export function MessageRoundIcon({size, color}: IconProps) {
   return (

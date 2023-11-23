@@ -1,7 +1,8 @@
 import {useState} from 'react'
+import React from 'react'
+
 import {Icon} from '../Icon/Icon'
 import {TextInput, TextInputProps} from '../TextInput/TextInput'
-import React from 'react'
 
 export type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>
 

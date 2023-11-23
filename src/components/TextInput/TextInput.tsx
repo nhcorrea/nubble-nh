@@ -1,18 +1,20 @@
-import {Box} from '../Box/Box'
-import {Text} from '../Text/Text'
+import {useRef} from 'react'
+import React from 'react'
 import {
   Pressable,
   TextInput as RNTextInput,
   TextInputProps as RNTextInputProps,
   StyleSheet,
 } from 'react-native'
-import {useRef} from 'react'
+
+import {BoxProps} from '@shopify/restyle'
+
+import {useAppTheme} from '@hooks'
+import {ThemeType} from '@theme'
 
 import {fontFamily, typography} from '../../theme/typography'
-import {useAppTheme} from '../../hooks/useAppTheme'
-import {BoxProps} from '@shopify/restyle'
-import {ThemeType} from '../../theme'
-import React from 'react'
+import {Box} from '../Box/Box'
+import {Text} from '../Text/Text'
 
 export interface TextInputProps extends RNTextInputProps {
   label: 'Email' | 'Senha' | string
