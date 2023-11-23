@@ -6,7 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {AppStackParamList} from '@routes'
 import {SettingsScreen} from '@screens'
 
-import {AppTabNavigator, BottomTabStack} from './AppTabNavigator'
+import {BottomTabStack} from './AppTabNavigator'
 
 const Stack = createNativeStackNavigator<AppStackParamList>()
 
