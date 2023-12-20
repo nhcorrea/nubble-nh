@@ -1,16 +1,18 @@
 import React from 'react'
 
 import {Button, ScreenContainer, Text} from '@components'
-import {AppBottomTabScreenProps} from '@routes'
+import {AppTabScreensProps} from '@routes'
 
 export function NewPostScreen({
   navigation,
-}: AppBottomTabScreenProps<'NewPostScreen'>) {
+}: AppTabScreensProps<'NewPostScreen'>) {
   return (
     <ScreenContainer>
       <Text variant="headingMedium">NewPostScreen</Text>
       <Button
-        onPress={() => navigation.navigate('SettingsScreen')}
+        onPress={() =>
+          navigation.navigate('BottomTabStack', {screen: 'FavoriteScreen'})
+        }
         title="Settings"
       />
     </ScreenContainer>
