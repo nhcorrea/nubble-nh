@@ -41,10 +41,10 @@ type RestyleProps = BackgroundColorProps<ThemeType> &
   ShadowProps<ThemeType> &
   BorderProps<ThemeType>
 
-export type ButtonContainerProps = RNTouchableOpacityProps & RestyleProps
+export type TouchableOpacityBoxProps = RNTouchableOpacityProps & RestyleProps
 
-export const ButtonContainer = createRestyleComponent<
-  ButtonContainerProps,
+export const TouchableOpacityBox = createRestyleComponent<
+  TouchableOpacityBoxProps,
   ThemeType
 >(
   [
@@ -60,7 +60,7 @@ export const ButtonContainer = createRestyleComponent<
   TouchableOpacity,
 )
 
-interface ButtonProps extends ButtonContainerProps {
+interface ButtonProps extends TouchableOpacityBoxProps {
   title: string
   loading?: boolean
   preset?: ButtonPresets
@@ -71,7 +71,7 @@ export function Button({
   loading,
   preset = 'filled',
   disabled,
-  ...ButtonContainerProps
+  ...TouchableOpacityProps
 }: ButtonProps) {
   const {colors} = useAppTheme()
   const ButtonUI = disabled
@@ -79,14 +79,14 @@ export function Button({
     : buttonPresets[preset].default
 
   return (
-    <ButtonContainer
+    <TouchableOpacityBox
       height={50}
       borderRadius="s16"
       justifyContent="center"
       alignItems="center"
       disabled={disabled || loading}
       {...ButtonUI.container}
-      {...ButtonContainerProps}>
+      {...TouchableOpacityProps}>
       {loading ? (
         <ActivityIndicator size="large" color={colors[ButtonUI.content]} />
       ) : (
@@ -94,6 +94,6 @@ export function Button({
           {title}
         </Text>
       )}
-    </ButtonContainer>
+    </TouchableOpacityBox>
   )
 }

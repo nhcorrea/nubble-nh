@@ -6,7 +6,7 @@ import {useNavigation} from '@react-navigation/native'
 import {useAppSafeArea, useAppTheme} from '@hooks'
 
 import {Box} from '../Box/Box'
-import {ButtonContainer} from '../Button/Button'
+import {TouchableOpacityBox} from '../Button/Button'
 import {Icon} from '../Icon/Icon'
 import {Text} from '../Text/Text'
 
@@ -42,13 +42,13 @@ export function ScreenContainer({
           paddingHorizontal="s24"
           backgroundColor="background">
           {canGoBack ? (
-            <ButtonContainer
+            <TouchableOpacityBox
               onPress={navigation.goBack}
               flexDirection="row"
               gap="s8">
               <Icon name="Arrow" color="primary" />
               <Text variant="paragraphMedium">Voltar</Text>
-            </ButtonContainer>
+            </TouchableOpacityBox>
           ) : null}
           {children}
         </Box>

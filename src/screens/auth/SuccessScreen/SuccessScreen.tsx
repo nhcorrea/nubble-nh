@@ -1,8 +1,7 @@
 import React from 'react'
 
-import {AuthScreenProps} from 'src/utils/routeParamList'
-
 import {Button, Text, ScreenContainer, Icon} from '@components'
+import {AuthScreenProps} from '@routes'
 
 export function SuccessScreen({
   navigation,

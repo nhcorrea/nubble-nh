@@ -1,9 +1,9 @@
 import {ThemeType} from '@theme'
 
-import {ButtonContainerProps} from './Button'
+import {TouchableOpacityBoxProps} from './Button'
 
 interface ButtonUI {
-  container: ButtonContainerProps
+  container: TouchableOpacityBoxProps
   content: keyof ThemeType['colors']
 }
 
