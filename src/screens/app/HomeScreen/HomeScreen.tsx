@@ -7,6 +7,8 @@ import {Post} from 'src/domain/Post/types'
 import {ScreenContainer, PostItem, Box} from '@components'
 import {AppTabScreensProps} from '@routes'
 
+import {HomeHeader} from './HomeHeader/HomeHeader'
+
 function ItemSeparatorComponent() {
   return <Box height={28} />
 }
@@ -33,6 +35,7 @@ export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>) {
         data={postList}
         keyExtractor={keyExtractor}
         renderItem={renderItem}
+        ListHeaderComponent={HomeHeader}
         ItemSeparatorComponent={ItemSeparatorComponent}
       />
     </ScreenContainer>

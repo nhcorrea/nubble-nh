@@ -14,6 +14,7 @@ module.exports = {
           '@icons': './src/assets/icons',
           '@theme': './src/theme',
           '@utils': './src/utils',
+          '@brand': './src/assets/brand',
         },
       },
     ],

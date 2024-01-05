@@ -3,14 +3,15 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@components": ["src/components"],
-      "@domain": ["src/domain"],
+      "@components": ["./src/components"],
+      "@domain": ["./src/domain"],
       "@hooks": ["./src/hooks"],
       "@routes": ["./src/routes"],
       "@screens": ["./src/screens"],
       "@icons": ["./src/assets/icons"],
       "@theme": ["./src/theme"],
-      "@utils": ["./src/utils"]
+      "@utils": ["./src/utils"],
+      "@brand": ["./src/assets/brand"]
     }
   }
 }
