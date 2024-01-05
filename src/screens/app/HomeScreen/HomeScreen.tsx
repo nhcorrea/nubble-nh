@@ -18,8 +18,8 @@ export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>) {
     postService.getList().then(list => setPostList(list))
   }, [])
 
-  function keyExtractor(item: Post) {
-    return item.id
+  function keyExtractor(item: Post, index: number) {
+    return `${item.id}-${index}`
   }
 
   function renderItem({item}: ListRenderItemInfo<Post>) {
@@ -29,6 +29,7 @@ export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>) {
   return (
     <ScreenContainer>
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={postList}
         keyExtractor={keyExtractor}
         renderItem={renderItem}

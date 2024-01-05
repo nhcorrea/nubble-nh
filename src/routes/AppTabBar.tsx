@@ -18,7 +18,6 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
       bg="background"
       style={[{paddingBottom: bottom}, {...shadowProps}]}>
       {state.routes.map((route, index) => {
-        console.log(route.name)
         const {options} = descriptors[route.key]
 
         const {icon, label} =
@@ -47,6 +46,7 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
 
         return (
           <TouchableOpacityBox
+            key={route.name}
             accessibilityRole="button"
             accessibilityState={isFocused ? {selected: true} : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}

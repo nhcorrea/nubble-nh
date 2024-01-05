@@ -19,6 +19,8 @@ export const theme = createTheme({
 
     success: pallete.greenSucessPrimary,
     successLight: pallete.greenSucessSecondary,
+
+    marked: pallete.orangePrimary,
   },
   spacing: {
     s4: 4,

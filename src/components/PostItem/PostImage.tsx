@@ -1,5 +1,5 @@
 import React from 'react'
-import {Image, useWindowDimensions} from 'react-native'
+import {Image, ImageStyle, useWindowDimensions} from 'react-native'
 
 import {Post} from '@domain'
 
@@ -9,9 +9,13 @@ export function PostImage({imageURL}: Props) {
   const {width} = useWindowDimensions()
   return (
     <Image
-      style={{width, height: 260}}
+      style={{width, ...postImageStyles}}
       resizeMode="cover"
       source={{uri: imageURL}}
     />
   )
+}
+
+const postImageStyles: ImageStyle = {
+  height: 260,
 }
