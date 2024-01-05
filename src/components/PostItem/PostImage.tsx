@@ -9,13 +9,14 @@ export function PostImage({imageURL}: Props) {
   const {width} = useWindowDimensions()
   return (
     <Image
-      style={{width, ...postImageStyles}}
+      style={{width, ...imageStyle}}
       resizeMode="cover"
       source={{uri: imageURL}}
     />
   )
 }
 
-const postImageStyles: ImageStyle = {
+const imageStyle: ImageStyle = {
   height: 260,
+  marginHorizontal: -24,
 }

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {FlatList, ListRenderItemInfo} from 'react-native'
+import {FlatList, ListRenderItemInfo, ViewStyle} from 'react-native'
 
 import {postService} from '@domain'
 import {Post} from 'src/domain/Post/types'
@@ -27,7 +27,7 @@ export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>) {
   }
 
   return (
-    <ScreenContainer>
+    <ScreenContainer style={screenStyle}>
       <FlatList
         showsVerticalScrollIndicator={false}
         data={postList}
@@ -37,4 +37,10 @@ export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>) {
       />
     </ScreenContainer>
   )
+}
+
+const screenStyle: ViewStyle = {
+  paddingTop: 0,
+  paddingBottom: 0,
+  paddingHorizontal: 0,
 }
