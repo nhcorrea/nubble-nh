@@ -16,7 +16,7 @@ export function PostBottom({author: {userName}, commentCount, text}: Props) {
       <Text variant="paragraphMedium" color="gray1">
         {text}
       </Text>
-      {commentCount && (
+      {commentText && (
         <Text marginTop="s8" color="primary" variant="paragraphMediumBold">
           {commentText}
         </Text>
@@ -25,7 +25,7 @@ export function PostBottom({author: {userName}, commentCount, text}: Props) {
   )
 }
 
-function getCommentText(commentCount: number): string | null {
+function getCommentText(commentCount: number) {
   if (commentCount === 0) {
     return null
   }
@@ -35,5 +35,6 @@ function getCommentText(commentCount: number): string | null {
   if (commentCount >= 2) {
     return `ver ${commentCount} comentários`
   }
+
   return null
 }
