@@ -1,11 +1,16 @@
-import {postListMock} from './postListMock'
-import {Post} from './types'
+import {api, PageAPI} from '@api';
 
-export async function getList(): Promise<Post[]> {
-  await new Promise(resolve => setTimeout(resolve, 2000))
-  return postListMock
+import {PostAPI} from './postTypes';
+
+export async function getList(): Promise<PageAPI<PostAPI>> {
+  const response = await api.get<PageAPI<PostAPI>>('/user/post');
+
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
+  const result: PageAPI<PostAPI> = response.data;
+  return result;
 }
 
 export const postApi = {
   getList,
-}
+};

@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-import {SimpleLogo} from '@brand'
+import {SimpleLogo} from '@brand';
 
-import {Box, BoxProps, Icon} from '@components'
-import {useAppSafeArea} from '@hooks'
+import {Box, BoxProps, Icon} from '@components';
+import {useAppSafeArea} from '@hooks';
 
 export function HomeHeader() {
-  const {top} = useAppSafeArea()
+  const {top} = useAppSafeArea();
   return (
     <Box {...wrapperStyle} style={{paddingTop: top}}>
       <SimpleLogo width={70} />
@@ -16,7 +16,7 @@ export function HomeHeader() {
         <Icon name="Chat" />
       </Box>
     </Box>
-  )
+  );
 }
 
 const wrapperStyle: BoxProps = {
@@ -25,4 +25,4 @@ const wrapperStyle: BoxProps = {
   paddingBottom: 's24',
   alignItems: 'center',
   justifyContent: 'space-between',
-}
+};

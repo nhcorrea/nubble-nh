@@ -1,17 +1,17 @@
-import {ThemeType} from '@theme'
+import {ThemeType} from '@theme';
 
-import {TouchableOpacityBoxProps} from './Button'
+import {TouchableOpacityBoxProps} from './Button';
 
 interface ButtonUI {
-  container: TouchableOpacityBoxProps
-  content: keyof ThemeType['colors']
+  container: TouchableOpacityBoxProps;
+  content: keyof ThemeType['colors'];
 }
 
-export type ButtonPresets = 'filled' | 'outline'
+export type ButtonPresets = 'filled' | 'outline';
 
 interface ButtonUIModel {
-  default: ButtonUI
-  disabled: ButtonUI
+  default: ButtonUI;
+  disabled: ButtonUI;
 }
 
 export const buttonPresets: Record<ButtonPresets, ButtonUIModel> = {
@@ -45,4 +45,4 @@ export const buttonPresets: Record<ButtonPresets, ButtonUIModel> = {
       content: 'gray2',
     },
   },
-}
+};

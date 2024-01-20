@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-import {NavigationContainer} from '@react-navigation/native'
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {AppStackParamList} from '@routes'
-import {SettingsScreen} from '@screens'
+import {AppStackParamList} from '@routes';
+import {SettingsScreen} from '@screens';
 
-import {BottomTabStack} from './AppTabNavigator'
+import {BottomTabStack} from './AppTabNavigator';
 
-const Stack = createNativeStackNavigator<AppStackParamList>()
+const Stack = createNativeStackNavigator<AppStackParamList>();
 
 export function AppStack() {
   return (
@@ -20,5 +20,5 @@ export function AppStack() {
         <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }

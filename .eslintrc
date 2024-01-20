@@ -2,9 +2,6 @@
   "root": true,
   "extends": ["@react-native"],
   "plugins": ["import"],
-  "rules": {
-    "semi": "off"
-  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],

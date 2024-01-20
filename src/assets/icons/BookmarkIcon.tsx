@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import {Svg, Path} from 'react-native-svg'
+import {Svg, Path} from 'react-native-svg';
 
-import {IconProps} from './icon'
+import {IconProps} from './icon';
 
 export function BookmarkIcon({
   color = '#000',
@@ -22,5 +22,5 @@ export function BookmarkIcon({
         fill={color}
       />
     </Svg>
-  )
+  );
 }

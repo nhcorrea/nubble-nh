@@ -1,9 +1,9 @@
-import React from 'react'
-import {Alert, TouchableOpacity} from 'react-native'
+import React from 'react';
+import {Alert, TouchableOpacity} from 'react-native';
 
-import {zodResolver} from '@hookform/resolvers/zod'
-import {useForm} from 'react-hook-form'
-import {AuthScreenProps} from 'src/utils/routeParamList'
+import {zodResolver} from '@hookform/resolvers/zod';
+import {useForm} from 'react-hook-form';
+import {AuthScreenProps} from 'src/utils/routeParamList';
 
 import {
   FormTextInput,
@@ -12,19 +12,19 @@ import {
   Button,
   Text,
   ScreenContainer,
-} from '@components'
+} from '@components';
 
-import {LoginSchema, loginSchema} from './loginSchema'
+import {LoginSchema, loginSchema} from './loginSchema';
 
 export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
   function navigateToSignUp() {
-    navigation.navigate('SignUpScreen')
+    navigation.navigate('SignUpScreen');
   }
   function navigateToForgotPassword() {
-    navigation.navigate('ForgotPassword')
+    navigation.navigate('ForgotPassword');
   }
   function submitForm({email, password}: LoginSchema) {
-    Alert.alert(email, password)
+    Alert.alert(email, password);
   }
   const {control, formState, handleSubmit} = useForm<LoginSchema>({
     defaultValues: {
@@ -33,7 +33,7 @@ export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
     },
     resolver: zodResolver(loginSchema),
     mode: 'onChange',
-  })
+  });
   return (
     <ScreenContainer scrollEnabled>
       <Box gap="s8">
@@ -78,5 +78,5 @@ export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
         />
       </Box>
     </ScreenContainer>
-  )
+  );
 }

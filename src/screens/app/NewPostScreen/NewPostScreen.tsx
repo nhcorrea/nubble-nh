@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import {Button, ScreenContainer, Text} from '@components'
-import {AppTabScreensProps} from '@routes'
+import {Button, ScreenContainer, Text} from '@components';
+import {AppTabScreensProps} from '@routes';
 
 export function NewPostScreen({
   navigation,
@@ -16,5 +16,5 @@ export function NewPostScreen({
         title="Settings"
       />
     </ScreenContainer>
-  )
+  );
 }

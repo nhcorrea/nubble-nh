@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import {Svg, Path} from 'react-native-svg'
+import {Svg, Path} from 'react-native-svg';
 
-import {IconProps} from './icon'
+import {IconProps} from './icon';
 
 export function SettingsIcon({
   color = '#000',
@@ -20,5 +20,5 @@ export function SettingsIcon({
         fill={color}
       />
     </Svg>
-  )
+  );
 }

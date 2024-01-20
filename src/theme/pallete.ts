@@ -15,4 +15,4 @@ export const pallete = {
   greenSucessSecondary: '#D8FFEC',
   redErrorPrimary: '#EA3838',
   redErrorSecondary: '#FBECEC',
-}
+};

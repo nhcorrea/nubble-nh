@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import {Svg, Circle, Path} from 'react-native-svg'
+import {Svg, Circle, Path} from 'react-native-svg';
 
-import {IconProps} from './icon'
+import {IconProps} from './icon';
 export function CheckRoundIcon({size, color}: IconProps) {
   return (
     <Svg width={size} height={size} fill="none">
@@ -14,5 +14,5 @@ export function CheckRoundIcon({size, color}: IconProps) {
         fill="#fff"
       />
     </Svg>
-  )
+  );
 }

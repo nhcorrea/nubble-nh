@@ -1,26 +1,26 @@
-import {useRef} from 'react'
-import React from 'react'
+import {useRef} from 'react';
+import React from 'react';
 import {
   Pressable,
   TextInput as RNTextInput,
   TextInputProps as RNTextInputProps,
   StyleSheet,
-} from 'react-native'
+} from 'react-native';
 
-import {BoxProps} from '@shopify/restyle'
+import {BoxProps} from '@shopify/restyle';
 
-import {useAppTheme} from '@hooks'
-import {ThemeType} from '@theme'
+import {useAppTheme} from '@hooks';
+import {ThemeType} from '@theme';
 
-import {fontFamily, typography} from '../../theme/typography'
-import {Box} from '../Box/Box'
-import {Text} from '../Text/Text'
+import {fontFamily, typography} from '../../theme/typography';
+import {Box} from '../Box/Box';
+import {Text} from '../Text/Text';
 
 export interface TextInputProps extends RNTextInputProps {
-  label: 'Email' | 'Senha' | string
-  errorMessage?: string
-  RightComponent?: JSX.Element
-  boxProps?: BoxProps<ThemeType>
+  label: 'Email' | 'Senha' | string;
+  errorMessage?: string;
+  RightComponent?: JSX.Element;
+  boxProps?: BoxProps<ThemeType>;
 }
 
 export function TextInput({
@@ -30,10 +30,10 @@ export function TextInput({
   boxProps,
   ...props
 }: TextInputProps) {
-  const inputRef = useRef<RNTextInput>(null)
-  const {colors} = useAppTheme()
+  const inputRef = useRef<RNTextInput>(null);
+  const {colors} = useAppTheme();
 
-  const focusInput = () => inputRef.current?.focus()
+  const focusInput = () => inputRef.current?.focus();
 
   return (
     <Box {...boxProps}>
@@ -68,7 +68,7 @@ export function TextInput({
         </Box>
       </Pressable>
     </Box>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -80,4 +80,4 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     flex: 1,
   },
-})
+});

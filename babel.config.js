@@ -15,8 +15,9 @@ module.exports = {
           '@theme': './src/theme',
           '@utils': './src/utils',
           '@brand': './src/assets/brand',
+          '@api': './src/api',
         },
       },
     ],
   ],
-}
+};

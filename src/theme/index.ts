@@ -1,8 +1,8 @@
-import {createTheme} from '@shopify/restyle'
-import {ViewStyle} from 'react-native/types'
+import {createTheme} from '@shopify/restyle';
+import {ViewStyle} from 'react-native/types';
 
-import {pallete} from './pallete'
-import {fontFamily, typography} from './typography'
+import {pallete} from './pallete';
+import {fontFamily, typography} from './typography';
 
 export const theme = createTheme({
   colors: {
@@ -100,7 +100,7 @@ export const theme = createTheme({
       ...fontFamily.bold,
     },
   },
-})
+});
 
 export const shadowProps: ViewStyle = {
   elevation: 7,
@@ -111,6 +111,6 @@ export const shadowProps: ViewStyle = {
   },
   shadowRadius: 12,
   shadowOpacity: 0.05,
-}
+};
 
-export type ThemeType = typeof theme
+export type ThemeType = typeof theme;

@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-import {BottomTabBarProps} from '@react-navigation/bottom-tabs'
+import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 
-import {Box, Icon, Text, TouchableOpacityBox} from '@components'
-import {useAppSafeArea} from '@hooks'
-import {shadowProps} from '@theme'
+import {Box, Icon, Text, TouchableOpacityBox} from '@components';
+import {useAppSafeArea} from '@hooks';
+import {shadowProps} from '@theme';
 
-import {mapScreenName} from './mapScreenProps'
-import {AppBottomTabParamList} from './routesTypes'
+import {mapScreenName} from './mapScreenProps';
+import {AppBottomTabParamList} from './routesTypes';
 
 export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
-  const {bottom} = useAppSafeArea()
+  const {bottom} = useAppSafeArea();
   return (
     <Box
       flexDirection="row"
@@ -18,31 +18,31 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
       bg="background"
       style={[{paddingBottom: bottom}, {...shadowProps}]}>
       {state.routes.map((route, index) => {
-        const {options} = descriptors[route.key]
+        const {options} = descriptors[route.key];
 
         const {icon, label} =
-          mapScreenName[route.name as keyof AppBottomTabParamList]
+          mapScreenName[route.name as keyof AppBottomTabParamList];
 
-        const isFocused = state.index === index
+        const isFocused = state.index === index;
 
         const onPress = () => {
           const event = navigation.emit({
             type: 'tabPress',
             target: route.key,
             canPreventDefault: true,
-          })
+          });
 
           if (!isFocused && !event.defaultPrevented) {
-            navigation.navigate(route.name, route.params)
+            navigation.navigate(route.name, route.params);
           }
-        }
+        };
 
         const onLongPress = () => {
           navigation.emit({
             type: 'tabLongPress',
             target: route.key,
-          })
-        }
+          });
+        };
 
         return (
           <TouchableOpacityBox
@@ -67,8 +67,8 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
               {label}
             </Text>
           </TouchableOpacityBox>
-        )
+        );
       })}
     </Box>
-  )
+  );
 }

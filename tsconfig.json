@@ -11,7 +11,8 @@
       "@icons": ["./src/assets/icons"],
       "@theme": ["./src/theme"],
       "@utils": ["./src/utils"],
-      "@brand": ["./src/assets/brand"]
+      "@brand": ["./src/assets/brand"],
+      "@api": ["./src/api"]
     }
   }
 }

@@ -1,15 +1,15 @@
-import {IconProps} from '@components'
-import {AppBottomTabParamList} from '@routes'
+import {IconProps} from '@components';
+import {AppBottomTabParamList} from '@routes';
 
 interface ScreenName {
-  label: string
+  label: string;
   icon: {
-    isFocused: IconProps['name']
-    unFocused: IconProps['name']
-  }
+    isFocused: IconProps['name'];
+    unFocused: IconProps['name'];
+  };
 }
 
-type TabScreenName = keyof AppBottomTabParamList
+type TabScreenName = keyof AppBottomTabParamList;
 
 export const mapScreenName: Record<TabScreenName, ScreenName> = {
   HomeScreen: {
@@ -40,4 +40,4 @@ export const mapScreenName: Record<TabScreenName, ScreenName> = {
       unFocused: 'NewPost',
     },
   },
-}
+};

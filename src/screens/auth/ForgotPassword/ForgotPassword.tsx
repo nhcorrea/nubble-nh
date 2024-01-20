@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-import {zodResolver} from '@hookform/resolvers/zod'
-import {useForm} from 'react-hook-form'
+import {zodResolver} from '@hookform/resolvers/zod';
+import {useForm} from 'react-hook-form';
 
-import {Button, ScreenContainer, Text, FormTextInput} from '@components'
-import {useResetNavigation} from '@hooks'
+import {Button, ScreenContainer, Text, FormTextInput} from '@components';
+import {useResetNavigation} from '@hooks';
 
 import {
   ForgotPasswordSchema,
   forgotPasswordSchema,
-} from './forgotPasswordSchema'
+} from './forgotPasswordSchema';
 
 export function ForgotPassword() {
-  const {reset} = useResetNavigation()
+  const {reset} = useResetNavigation();
 
   const {control, formState, handleSubmit} = useForm<ForgotPasswordSchema>({
     defaultValues: {
@@ -20,7 +20,7 @@ export function ForgotPassword() {
     },
     resolver: zodResolver(forgotPasswordSchema),
     mode: 'onChange',
-  })
+  });
 
   function submitForm() {
     reset({
@@ -31,7 +31,7 @@ export function ForgotPassword() {
         name: 'MessageRound',
         color: 'primary',
       },
-    })
+    });
   }
 
   return (
@@ -55,5 +55,5 @@ export function ForgotPassword() {
         title="Recuperar senha"
       />
     </ScreenContainer>
-  )
+  );
 }
