@@ -12,7 +12,8 @@
       "@theme": ["./src/theme"],
       "@utils": ["./src/utils"],
       "@brand": ["./src/assets/brand"],
-      "@api": ["./src/api"]
+      "@api": ["./src/api"],
+      "@types": ["./src/types"]
     }
   }
 }

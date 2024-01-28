@@ -19,7 +19,7 @@ import {Text} from '../Text/Text';
 export interface TextInputProps extends RNTextInputProps {
   label: 'Email' | 'Senha' | string;
   errorMessage?: string;
-  RightComponent?: JSX.Element;
+  RightComponent?: React.JSX.Element;
   boxProps?: BoxProps<ThemeType>;
 }
 

@@ -7,7 +7,7 @@ import {useAppTheme} from '@hooks';
 interface Props {
   isLoading: boolean;
   error: unknown;
-  refetch: () => void;
+  refresh: () => void;
 }
 
 const ERROS_MESSAGE = 'Something went wrong.';
@@ -17,7 +17,7 @@ function handleMessage(error: unknown) {
   return error ? ERROS_MESSAGE : EMPTY_MESSAGE;
 }
 
-function Component({isLoading, error, refetch}: Props): JSX.Element {
+function Component({isLoading, error, refresh}: Props): React.JSX.Element {
   const {colors} = useAppTheme();
 
   if (isLoading) {
@@ -32,7 +32,7 @@ function Component({isLoading, error, refetch}: Props): JSX.Element {
         <Button
           preset="outline"
           padding="s16"
-          onPress={refetch}
+          onPress={refresh}
           title="Tentar novamente"
         />
       )}
@@ -40,7 +40,7 @@ function Component({isLoading, error, refetch}: Props): JSX.Element {
   );
 }
 
-export function HomeEmpty({...props}: Props): JSX.Element {
+export function HomeEmpty({...props}: Props): React.JSX.Element {
   return (
     <Box flex={1} justifyContent="center" alignItems="center">
       <Component {...props} />
