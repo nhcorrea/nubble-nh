@@ -3,7 +3,6 @@ import {Alert, TouchableOpacity} from 'react-native';
 
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
-import {AuthScreenProps} from 'src/utils/routeParamList';
 
 import {
   FormTextInput,
@@ -13,6 +12,7 @@ import {
   Text,
   ScreenContainer,
 } from '@components';
+import {AuthScreenProps} from '@routes';
 
 import {LoginSchema, loginSchema} from './loginSchema';
 
@@ -26,6 +26,7 @@ export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
   function submitForm({email, password}: LoginSchema) {
     Alert.alert(email, password);
   }
+
   const {control, formState, handleSubmit} = useForm<LoginSchema>({
     defaultValues: {
       email: '',
@@ -34,6 +35,7 @@ export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
     resolver: zodResolver(loginSchema),
     mode: 'onChange',
   });
+
   return (
     <ScreenContainer scrollEnabled>
       <Box gap="s8">
