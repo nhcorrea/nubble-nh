@@ -9,6 +9,7 @@ import {
 
 import {Post, usePostList} from '@domain';
 import {useScrollToTop} from '@react-navigation/native';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import {ScreenContainer, PostItem, Box} from '@components';
 import {useAppTheme} from '@hooks';
@@ -33,23 +34,30 @@ function handleContentContainerStyle(length: number): ViewStyle {
   return length === 0 ? {flex: 1} : {flex: undefined};
 }
 
+function ListFooterComponent(isLoading: boolean): React.JSX.Element | null {
+  if (isLoading) {
+    return (
+      <Box p="s16">
+        <ActivityIndicator color={Colors.primary} size="small" />
+      </Box>
+    );
+  }
+  return null;
+}
+
 export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>): React.JSX.Element {
-  const {postList, fetchNextPage, ...rest} = usePostList();
+  const {list, fetchNextPage, ...rest} = usePostList();
   const {colors} = useAppTheme();
   const flatListReft = useRef<FlatList>(null);
 
   useScrollToTop(flatListReft);
 
-  const contentContainerStyle = postList
-    ? handleContentContainerStyle(postList.length)
-    : undefined;
-
   return (
     <ScreenContainer style={screenStyle}>
       <FlatList
         ref={flatListReft}
-        contentContainerStyle={contentContainerStyle}
-        data={postList}
+        contentContainerStyle={handleContentContainerStyle(list.length)}
+        data={list}
         ItemSeparatorComponent={ItemSeparatorComponent}
         keyExtractor={keyExtractor}
         ListHeaderComponent={HomeHeader}
@@ -66,13 +74,7 @@ export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>): React.JSX.Elem
         refreshing={rest.isLoading}
         onEndReached={fetchNextPage}
         onEndReachedThreshold={0.1}
-        ListFooterComponent={
-          rest.isLoading ? (
-            <Box p="s16">
-              <ActivityIndicator color={colors.primary} size="small" />
-            </Box>
-          ) : null
-        }
+        ListFooterComponent={ListFooterComponent(rest.isLoading)}
       />
     </ScreenContainer>
   );

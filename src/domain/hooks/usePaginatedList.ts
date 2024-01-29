@@ -7,7 +7,7 @@ export function usePaginatedList<Data>(
 ) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean | null>();
-  const [postList, setPostList] = useState<Data[]>([]);
+  const [list, setList] = useState<Data[]>([]);
   const [page, setPage] = useState<number>(1);
   const [hasNextPage, setHasNextPage] = useState<boolean>(false);
 
@@ -16,7 +16,7 @@ export function usePaginatedList<Data>(
       setError(null);
       setIsLoading(true);
       const {data, meta} = await getList(1);
-      setPostList(data);
+      setList(data);
 
       if (meta.hasNextPage) {
         setPage(2);
@@ -40,7 +40,7 @@ export function usePaginatedList<Data>(
       setError(null);
       setIsLoading(true);
       const {data, meta} = await getList(page);
-      setPostList(prev => [...prev, ...data]);
+      setList(prev => [...prev, ...data]);
 
       if (meta.hasNextPage) {
         setPage(prev => prev + 1);
@@ -61,7 +61,7 @@ export function usePaginatedList<Data>(
   }, []);
 
   return {
-    postList,
+    list,
     isLoading,
     error,
     refresh: fetchInitialData,
