@@ -7,8 +7,7 @@ export async function getList(params: PageParams): Promise<PageAPI<PostAPI>> {
     params,
   });
 
-  const result: PageAPI<PostAPI> = response.data;
-  return result;
+  return response.data;
 }
 
 export const postApi = {
