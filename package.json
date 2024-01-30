@@ -6,7 +6,6 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "prettier ./src --write && eslint ./src",
-    "lint-fix": "prettier --write ./src && eslint --fix ./src",
     "start": "react-native start",
     "test": "jest",
     "android-clean": "cd android && ./gradlew clean && rm -rf ./build && cd ..",

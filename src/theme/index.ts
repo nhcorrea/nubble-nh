@@ -1,26 +1,26 @@
 import {createTheme} from '@shopify/restyle';
 import {ViewStyle} from 'react-native/types';
 
-import {pallete} from './pallete';
+import {palette} from './palette';
 import {fontFamily, typography} from './typography';
 
 export const theme = createTheme({
   colors: {
-    ...pallete,
+    ...palette,
 
-    primary: pallete.greenPrimary,
-    primaryContrast: pallete.grayWhite,
+    primary: palette.greenPrimary,
+    primaryContrast: palette.grayWhite,
 
-    background: pallete.grayWhite,
-    backgroundContrast: pallete.grayBlack,
+    background: palette.grayWhite,
+    backgroundContrast: palette.grayBlack,
 
-    error: pallete.redErrorPrimary,
-    errorLight: pallete.redErrorSecondary,
+    error: palette.redErrorPrimary,
+    errorLight: palette.redErrorSecondary,
 
-    success: pallete.greenSucessPrimary,
-    successLight: pallete.greenSucessSecondary,
+    success: palette.greenSucessPrimary,
+    successLight: palette.greenSucessSecondary,
 
-    marked: pallete.orangePrimary,
+    marked: palette.orangePrimary,
   },
   spacing: {
     s4: 4,
