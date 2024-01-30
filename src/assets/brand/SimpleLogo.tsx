@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-import {Svg, Path} from 'react-native-svg'
+import {Svg, Path} from 'react-native-svg';
 
-import {useAppTheme} from '@hooks'
+import {useAppTheme} from '@hooks';
 
 interface Props {
-  width?: number
+  width?: number;
 }
 
 export function SimpleLogo({width = 105}: Props) {
-  const {colors} = useAppTheme()
-  const height = (width * 24) / 105
+  const {colors} = useAppTheme();
+  const height = (width * 24) / 105;
   return (
     <Svg width={width} height={height} viewBox="0 0 105 24" fill="none">
       <Path
@@ -42,5 +42,5 @@ export function SimpleLogo({width = 105}: Props) {
         fill={colors.backgroundContrast}
       />
     </Svg>
-  )
+  );
 }

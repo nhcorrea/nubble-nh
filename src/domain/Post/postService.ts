@@ -1,11 +1,20 @@
-import {postApi} from './postApi'
-import {Post} from './types'
+import {apiAdapter} from '@api';
+import {Page} from '@types';
 
-async function getList(): Promise<Post[]> {
-  const result = await postApi.getList()
-  return result
+import {postAdapter} from './postAdapter';
+import {postApi} from './postApi';
+import {Post} from './postTypes';
+
+async function getList(page: number): Promise<Page<Post>> {
+  const postList = await postApi.getList({page, per_page: 10});
+  const data = postList.data.map(postAdapter.toPost);
+
+  return {
+    data,
+    meta: apiAdapter.toMetaDataPage(postList.meta),
+  };
 }
 
 export const postService = {
   getList,
-}
+};

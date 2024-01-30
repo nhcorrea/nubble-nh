@@ -1,5 +1,5 @@
-import {useTheme} from '@shopify/restyle'
+import {useTheme} from '@shopify/restyle';
 
-import {ThemeType} from '@theme'
+import {ThemeType} from '@theme';
 
-export const useAppTheme = () => useTheme<ThemeType>()
+export const useAppTheme = () => useTheme<ThemeType>();

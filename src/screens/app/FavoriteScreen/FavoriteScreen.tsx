@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import {Button, ScreenContainer, Text} from '@components'
-import {AppBottomTabScreenProps} from '@routes'
+import {Button, ScreenContainer, Text} from '@components';
+import {AppBottomTabScreenProps} from '@routes';
 
 export function FavoriteScreen({
   navigation,
@@ -14,5 +14,5 @@ export function FavoriteScreen({
         title="Settings"
       />
     </ScreenContainer>
-  )
+  );
 }

@@ -1,21 +1,21 @@
-import React from 'react'
-import {KeyboardAvoidingView, Platform, StyleSheet} from 'react-native'
+import React from 'react';
+import {KeyboardAvoidingView, Platform, StyleSheet} from 'react-native';
 
-import {useNavigation} from '@react-navigation/native'
+import {useNavigation} from '@react-navigation/native';
 
-import {useAppSafeArea, useAppTheme} from '@hooks'
+import {useAppSafeArea, useAppTheme} from '@hooks';
 
-import {Box, BoxProps} from '../Box/Box'
-import {TouchableOpacityBox} from '../Button/Button'
-import {Icon} from '../Icon/Icon'
-import {Text} from '../Text/Text'
+import {Box, BoxProps} from '../Box/Box';
+import {TouchableOpacityBox} from '../Button/Button';
+import {Icon} from '../Icon/Icon';
+import {Text} from '../Text/Text';
 
-import {ScrollViewContainer, ViewContainer} from './Containers/Containers'
+import {ScrollViewContainer, ViewContainer} from './Containers/Containers';
 
 interface Props extends BoxProps {
-  children: React.ReactNode
-  canGoBack?: boolean
-  scrollEnabled?: boolean
+  children: React.ReactNode;
+  canGoBack?: boolean;
+  scrollEnabled?: boolean;
 }
 
 export function ScreenContainer({
@@ -25,10 +25,10 @@ export function ScreenContainer({
   style,
   ...boxProps
 }: Props) {
-  const {bottom, top} = useAppSafeArea()
-  const {colors} = useAppTheme()
-  const navigation = useNavigation()
-  const Container = scrollEnabled ? ScrollViewContainer : ViewContainer
+  const {bottom, top} = useAppSafeArea();
+  const {colors} = useAppTheme();
+  const navigation = useNavigation();
+  const Container = scrollEnabled ? ScrollViewContainer : ViewContainer;
 
   return (
     <KeyboardAvoidingView
@@ -60,11 +60,11 @@ export function ScreenContainer({
         </Box>
       </Container>
     </KeyboardAvoidingView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   flex: {
     flex: 1,
   },
-})
+});

@@ -1,49 +1,88 @@
-import React, {useEffect, useState} from 'react'
-import {FlatList, ListRenderItemInfo, ViewStyle} from 'react-native'
+import React, {useRef} from 'react';
+import {
+  ActivityIndicator,
+  FlatList,
+  ListRenderItemInfo,
+  RefreshControl,
+  ViewStyle,
+} from 'react-native';
 
-import {postService} from '@domain'
-import {Post} from 'src/domain/Post/types'
+import {Post, usePostList} from '@domain';
+import {useScrollToTop} from '@react-navigation/native';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-import {ScreenContainer, PostItem, Box} from '@components'
-import {AppTabScreensProps} from '@routes'
+import {ScreenContainer, PostItem, Box} from '@components';
+import {useAppTheme} from '@hooks';
+import {AppTabScreensProps} from '@routes';
 
-import {HomeHeader} from './HomeHeader/HomeHeader'
+import {HomeEmpty} from './components/HomeEmpty';
+import {HomeHeader} from './components/HomeHeader';
 
-function ItemSeparatorComponent() {
-  return <Box height={28} />
+function ItemSeparatorComponent(): React.JSX.Element {
+  return <Box height={28} />;
 }
 
-export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>) {
-  const [postList, setPostList] = useState<Post[]>()
+function keyExtractor(item: Post, index: number): string {
+  return `${item.id}-${index}`;
+}
 
-  useEffect(() => {
-    postService.getList().then(list => setPostList(list))
-  }, [])
+function renderItem({item}: ListRenderItemInfo<Post>): React.JSX.Element {
+  return <PostItem post={item} />;
+}
 
-  function keyExtractor(item: Post, index: number) {
-    return `${item.id}-${index}`
+function handleContentContainerStyle(length: number): ViewStyle {
+  return length === 0 ? {flex: 1} : {flex: undefined};
+}
+
+function ListFooterComponent(isLoading: boolean): React.JSX.Element | null {
+  if (isLoading) {
+    return (
+      <Box p="s16">
+        <ActivityIndicator color={Colors.primary} size="small" />
+      </Box>
+    );
   }
+  return null;
+}
 
-  function renderItem({item}: ListRenderItemInfo<Post>) {
-    return <PostItem post={item} />
-  }
+export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>): React.JSX.Element {
+  const {list, fetchNextPage, ...rest} = usePostList();
+  const {colors} = useAppTheme();
+  const flatListReft = useRef<FlatList>(null);
+
+  useScrollToTop(flatListReft);
 
   return (
     <ScreenContainer style={screenStyle}>
       <FlatList
-        showsVerticalScrollIndicator={false}
-        data={postList}
-        keyExtractor={keyExtractor}
-        renderItem={renderItem}
-        ListHeaderComponent={HomeHeader}
+        ref={flatListReft}
+        contentContainerStyle={handleContentContainerStyle(list.length)}
+        data={list}
         ItemSeparatorComponent={ItemSeparatorComponent}
+        keyExtractor={keyExtractor}
+        ListHeaderComponent={HomeHeader}
+        ListEmptyComponent={<HomeEmpty {...rest} />}
+        renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={rest.isLoading}
+            onRefresh={rest.refresh}
+            tintColor={colors.primary}
+          />
+        }
+        refreshing={rest.isLoading}
+        onEndReached={fetchNextPage}
+        onEndReachedThreshold={0.1}
+        ListFooterComponent={ListFooterComponent(rest.isLoading)}
       />
     </ScreenContainer>
-  )
+  );
 }
 
 const screenStyle: ViewStyle = {
   paddingTop: 0,
   paddingBottom: 0,
   paddingHorizontal: 0,
-}
+  flex: 1,
+};

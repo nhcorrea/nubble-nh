@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import {
   TouchableOpacity,
   TouchableOpacityProps as RNTouchableOpacityProps,
   ActivityIndicator,
-} from 'react-native'
+} from 'react-native';
 
 import {
   createRestyleComponent,
@@ -23,14 +23,14 @@ import {
   LayoutProps,
   ShadowProps,
   BorderProps,
-} from '@shopify/restyle'
+} from '@shopify/restyle';
 
-import {useAppTheme} from '@hooks'
-import {ThemeType} from '@theme'
+import {useAppTheme} from '@hooks';
+import {ThemeType} from '@theme';
 
-import {Text} from '../Text/Text'
+import {Text} from '../Text/Text';
 
-import {ButtonPresets, buttonPresets} from './buttonPresets'
+import {ButtonPresets, buttonPresets} from './buttonPresets';
 
 type RestyleProps = BackgroundColorProps<ThemeType> &
   BackgroundColorShorthandProps<ThemeType> &
@@ -39,9 +39,9 @@ type RestyleProps = BackgroundColorProps<ThemeType> &
   SpacingShorthandProps<ThemeType> &
   LayoutProps<ThemeType> &
   ShadowProps<ThemeType> &
-  BorderProps<ThemeType>
+  BorderProps<ThemeType>;
 
-export type TouchableOpacityBoxProps = RNTouchableOpacityProps & RestyleProps
+export type TouchableOpacityBoxProps = RNTouchableOpacityProps & RestyleProps;
 
 export const TouchableOpacityBox = createRestyleComponent<
   TouchableOpacityBoxProps,
@@ -58,13 +58,13 @@ export const TouchableOpacityBox = createRestyleComponent<
     border,
   ],
   TouchableOpacity,
-)
+);
 
 interface ButtonProps extends TouchableOpacityBoxProps {
-  title: string
-  loading?: boolean
-  preset?: ButtonPresets
-  disabled?: boolean
+  title: string;
+  loading?: boolean;
+  preset?: ButtonPresets;
+  disabled?: boolean;
 }
 export function Button({
   title,
@@ -73,10 +73,10 @@ export function Button({
   disabled,
   ...TouchableOpacityProps
 }: ButtonProps) {
-  const {colors} = useAppTheme()
+  const {colors} = useAppTheme();
   const ButtonUI = disabled
     ? buttonPresets[preset].disabled
-    : buttonPresets[preset].default
+    : buttonPresets[preset].default;
 
   return (
     <TouchableOpacityBox
@@ -95,5 +95,5 @@ export function Button({
         </Text>
       )}
     </TouchableOpacityBox>
-  )
+  );
 }

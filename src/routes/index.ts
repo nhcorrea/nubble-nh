@@ -1,2 +1,2 @@
-export * from './Routes'
-export * from './routesTypes'
+export * from './Routes';
+export * from './routesTypes';

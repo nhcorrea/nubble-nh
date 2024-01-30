@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-import {zodResolver} from '@hookform/resolvers/zod'
-import {useForm} from 'react-hook-form'
+import {zodResolver} from '@hookform/resolvers/zod';
+import {useForm} from 'react-hook-form';
 
-import {Box, Button, Text, ScreenContainer, FormTextInput} from '@components'
-import {useResetNavigation} from '@hooks'
+import {Box, Button, Text, ScreenContainer, FormTextInput} from '@components';
+import {useResetNavigation} from '@hooks';
 
-import {SignUpSchema, signUpSchema} from './signUpSchema'
+import {SignUpSchema, signUpSchema} from './signUpSchema';
 
 export function SignUpScreen() {
-  const {reset} = useResetNavigation()
+  const {reset} = useResetNavigation();
   function submitForm() {
     reset({
       title: 'Sua conta foi criada com sucesso!',
@@ -18,7 +18,7 @@ export function SignUpScreen() {
         name: 'CheckRound',
         color: 'success',
       },
-    })
+    });
   }
   const {control} = useForm<SignUpSchema>({
     defaultValues: {
@@ -29,7 +29,7 @@ export function SignUpScreen() {
     },
     resolver: zodResolver(signUpSchema),
     mode: 'onChange',
-  })
+  });
   return (
     <ScreenContainer canGoBack>
       <Box flex={1} mt="s24" gap="s32">
@@ -70,5 +70,5 @@ export function SignUpScreen() {
         <Button mt="s16" title="Criar uma conta" onPress={submitForm} />
       </Box>
     </ScreenContainer>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import React from 'react'
-import {Pressable} from 'react-native'
+import React from 'react';
+import {Pressable} from 'react-native';
 
 import {
   ArrowIcon,
@@ -29,10 +29,10 @@ import {
   TrashIcon,
   CheckRoundIcon,
   MessageRoundIcon,
-} from '@icons'
+} from '@icons';
 
-import {useAppTheme} from '@hooks'
-import {ThemeType} from '@theme'
+import {useAppTheme} from '@hooks';
+import {ThemeType} from '@theme';
 
 const IconRegistry = {
   Arrow: ArrowIcon,
@@ -62,17 +62,17 @@ const IconRegistry = {
   Search: SearchIcon,
   Settings: SettingsIcon,
   Trash: TrashIcon,
-}
+};
 
-type IconRegistryType = typeof IconRegistry
+type IconRegistryType = typeof IconRegistry;
 
 export interface IconProps {
-  name: keyof IconRegistryType
-  size?: string
-  color?: keyof ThemeType['colors']
-  widht?: string
-  height?: string
-  onPress?: () => void
+  name: keyof IconRegistryType;
+  size?: string;
+  color?: keyof ThemeType['colors'];
+  widht?: string;
+  height?: string;
+  onPress?: () => void;
 }
 
 export function Icon({
@@ -81,16 +81,16 @@ export function Icon({
   onPress,
   ...props
 }: IconProps) {
-  const SVGIcon = IconRegistry[name]
-  const {colors} = useAppTheme()
+  const SVGIcon = IconRegistry[name];
+  const {colors} = useAppTheme();
 
   if (onPress) {
     return (
       <Pressable onPress={onPress} hitSlop={12}>
         <SVGIcon color={colors[color]} {...props} />
       </Pressable>
-    )
+    );
   }
 
-  return <SVGIcon color={colors[color]} {...props} />
+  return <SVGIcon color={colors[color]} {...props} />;
 }

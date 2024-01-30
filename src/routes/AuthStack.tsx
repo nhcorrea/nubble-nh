@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-import {NavigationContainer} from '@react-navigation/native'
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {AuthStackParamList} from '@routes'
+import {AuthStackParamList} from '@routes';
 import {
   ForgotPassword,
   LoginScreen,
   SignUpScreen,
   SuccessScreen,
-} from '@screens'
+} from '@screens';
 
-const Stack = createNativeStackNavigator<AuthStackParamList>()
+const Stack = createNativeStackNavigator<AuthStackParamList>();
 
 export function AuthStack() {
   return (
@@ -27,5 +27,5 @@ export function AuthStack() {
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationContainer>
-  )
+  );
 }

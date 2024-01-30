@@ -1,9 +1,9 @@
-import {useNavigation} from '@react-navigation/native'
+import {useNavigation} from '@react-navigation/native';
 
-import {RootStackParamList} from '../routes/Routes'
+import {RootStackParamList} from '../routes/Routes';
 
 export function useResetNavigation() {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
   function reset(params: RootStackParamList['SuccessScreen']) {
     navigation.reset({
@@ -17,8 +17,8 @@ export function useResetNavigation() {
           params,
         },
       ],
-    })
+    });
   }
 
-  return {reset}
+  return {reset};
 }

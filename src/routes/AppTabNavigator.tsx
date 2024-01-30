@@ -1,24 +1,24 @@
-import React from 'react'
+import React from 'react';
 
 import {
   createBottomTabNavigator,
   BottomTabBarProps,
-} from '@react-navigation/bottom-tabs'
+} from '@react-navigation/bottom-tabs';
 
 import {
   FavoriteScreen,
   HomeScreen,
   MyProfileScreen,
   NewPostScreen,
-} from '@screens'
+} from '@screens';
 
-import {AppTabBar} from './AppTabBar'
-import {AppBottomTabParamList} from './routesTypes'
+import {AppTabBar} from './AppTabBar';
+import {AppBottomTabParamList} from './routesTypes';
 
-const BottomTab = createBottomTabNavigator<AppBottomTabParamList>()
+const BottomTab = createBottomTabNavigator<AppBottomTabParamList>();
 
 function renderTabBar(props: BottomTabBarProps) {
-  return <AppTabBar {...props} />
+  return <AppTabBar {...props} />;
 }
 
 export function BottomTabStack() {
@@ -31,5 +31,5 @@ export function BottomTabStack() {
       <BottomTab.Screen name="FavoriteScreen" component={FavoriteScreen} />
       <BottomTab.Screen name="MyProfileScreen" component={MyProfileScreen} />
     </BottomTab.Navigator>
-  )
+  );
 }

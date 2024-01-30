@@ -1,15 +1,19 @@
-import {ThemeProvider} from '@shopify/restyle'
-import {SafeAreaProvider} from 'react-native-safe-area-context'
-import {theme} from '@theme'
-import {Router} from '@routes'
-import React from 'react'
+import React from 'react';
 
-export function App(): JSX.Element {
+import {ThemeProvider} from '@shopify/restyle';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+import {Router} from '@routes';
+import {theme} from '@theme';
+
+/*TODO: fonts no ios*/
+
+export function App(): React.JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
         <Router />
       </SafeAreaProvider>
     </ThemeProvider>
-  )
+  );
 }

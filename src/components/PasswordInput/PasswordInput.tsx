@@ -1,15 +1,15 @@
-import {useState} from 'react'
-import React from 'react'
+import {useState} from 'react';
+import React from 'react';
 
-import {Icon} from '../Icon/Icon'
-import {TextInput, TextInputProps} from '../TextInput/TextInput'
+import {Icon} from '../Icon/Icon';
+import {TextInput, TextInputProps} from '../TextInput/TextInput';
 
-export type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>
+export type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>;
 
 export function PasswordInput({...props}: PasswordInputProps) {
-  const [isSecureTextEntry, setIsSecureTextEntry] = useState(true)
+  const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
 
-  const toggleSecureTextEntry = () => setIsSecureTextEntry(prev => !prev)
+  const toggleSecureTextEntry = () => setIsSecureTextEntry(prev => !prev);
 
   return (
     <TextInput
@@ -23,5 +23,5 @@ export function PasswordInput({...props}: PasswordInputProps) {
         />
       }
     />
-  )
+  );
 }

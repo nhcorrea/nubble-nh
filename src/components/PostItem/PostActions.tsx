@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-import {Post} from '@domain'
+import {Post} from '@domain';
 
-import {Box, TouchableOpacityBox, Text, Icon, IconProps} from '@components'
+import {Box, TouchableOpacityBox, Text, Icon, IconProps} from '@components';
 
 interface PostIconProps {
   iconName: {
-    default: IconProps['name']
-    marked: IconProps['name']
-  }
-  isMarked?: boolean
-  color?: IconProps['color']
-  counter: number
-  onPress: () => void
+    default: IconProps['name'];
+    marked: IconProps['name'];
+  };
+  isMarked?: boolean;
+  color?: IconProps['color'];
+  counter: number;
+  onPress: () => void;
 }
 
 function PostIcon({
@@ -37,13 +37,13 @@ function PostIcon({
         {counter}
       </Text>
     </TouchableOpacityBox>
-  )
+  );
 }
 
 type PostActionsProps = Pick<
   Post,
   'reactionCount' | 'commentCount' | 'favoriteCount'
->
+>;
 
 export function PostActions({
   commentCount,
@@ -70,5 +70,5 @@ export function PostActions({
         onPress={() => {}}
       />
     </Box>
-  )
+  );
 }

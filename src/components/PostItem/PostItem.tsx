@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-import {Post} from '@domain'
+import {Post} from '@domain';
 
-import {Box} from '@components'
+import {Box} from '@components';
 
-import {PostActions} from './PostActions'
-import {PostBottom} from './PostBottom'
-import {PostHeader} from './PostHeader'
-import {PostImage} from './PostImage'
+import {PostActions} from './PostActions';
+import {PostBottom} from './PostBottom';
+import {PostHeader} from './PostHeader';
+import {PostImage} from './PostImage';
 
 interface Props {
-  post: Post
+  post: Post;
 }
 
 export function PostItem({post}: Props) {
@@ -29,5 +29,5 @@ export function PostItem({post}: Props) {
         text={post.text}
       />
     </Box>
-  )
+  );
 }

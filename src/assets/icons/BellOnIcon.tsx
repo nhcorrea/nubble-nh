@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import {Svg, Path, Circle} from 'react-native-svg'
+import {Svg, Path, Circle} from 'react-native-svg';
 
-import {IconProps} from './icon'
+import {IconProps} from './icon';
 
 export function BellOnIcon({
   color = '#000',
@@ -23,5 +23,5 @@ export function BellOnIcon({
       />
       <Circle cx="16" cy="5" r="3" fill={color} />
     </Svg>
-  )
+  );
 }

@@ -1,3 +1,2 @@
-export * from './Post/postApi'
-export * from './Post/types'
-export * from './Post/postService'
+export * from './Post';
+export * from './hooks';

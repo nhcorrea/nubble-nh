@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import {Button, ScreenContainer, Text} from '@components'
-import {AppScreenProps} from '@routes'
+import {Button, ScreenContainer, Text} from '@components';
+import {AppScreenProps} from '@routes';
 
 export function SettingsScreen({navigation}: AppScreenProps<'SettingsScreen'>) {
   return (
@@ -9,5 +9,5 @@ export function SettingsScreen({navigation}: AppScreenProps<'SettingsScreen'>) {
       <Text variant="headingMedium">SettingsScreen</Text>
       <Button onPress={() => navigation.navigate('HomeScreen')} title="Home" />
     </ScreenContainer>
-  )
+  );
 }

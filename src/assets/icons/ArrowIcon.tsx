@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import {Svg, Path} from 'react-native-svg'
+import {Svg, Path} from 'react-native-svg';
 
-import {IconProps} from './icon'
+import {IconProps} from './icon';
 
 // #TODO: REFATORAR PARTE ICONES E DEIXA EM UM UNICO COMPONENTE ICON
 
@@ -25,5 +25,5 @@ export function ArrowIcon({
         fill={color}
       />
     </Svg>
-  )
+  );
 }

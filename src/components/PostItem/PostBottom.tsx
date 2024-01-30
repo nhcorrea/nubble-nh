@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import {Post} from '@domain'
+import {Post} from '@domain';
 
-import {Box, Text} from '@components'
+import {Box, Text} from '@components';
 
-type Props = Pick<Post, 'author' | 'commentCount' | 'text'>
+type Props = Pick<Post, 'author' | 'commentCount' | 'text'>;
 
 export function PostBottom({author: {userName}, commentCount, text}: Props) {
-  const commentText = getCommentText(commentCount)
+  const commentText = getCommentText(commentCount);
   return (
     <Box>
       <Text variant="paragraphMediumBold" color="grayBlack">
@@ -22,19 +22,19 @@ export function PostBottom({author: {userName}, commentCount, text}: Props) {
         </Text>
       )}
     </Box>
-  )
+  );
 }
 
 function getCommentText(commentCount: number) {
   if (commentCount === 0) {
-    return null
+    return null;
   }
   if (commentCount === 1) {
-    return 'ver comentário'
+    return 'ver comentário';
   }
   if (commentCount >= 2) {
-    return `ver ${commentCount} comentários`
+    return `ver ${commentCount} comentários`;
   }
 
-  return null
+  return null;
 }

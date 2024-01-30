@@ -39,7 +39,7 @@ export const fontFamily = {
     fontFamily: 'Satoshi-LightItalic',
     fontWeight: '300',
   },
-}
+};
 
 export const typography = {
   headingLarge: {
@@ -74,4 +74,4 @@ export const typography = {
     fontSize: 10,
     lineHeight: 14,
   },
-}
+};
