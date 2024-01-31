@@ -16,6 +16,7 @@ interface Props extends BoxProps {
   children: React.ReactNode;
   canGoBack?: boolean;
   scrollEnabled?: boolean;
+  title?: string;
 }
 
 export function ScreenContainer({
@@ -23,6 +24,7 @@ export function ScreenContainer({
   scrollEnabled = false,
   canGoBack = false,
   style,
+  // title,
   ...boxProps
 }: Props) {
   const {bottom, top} = useAppSafeArea();

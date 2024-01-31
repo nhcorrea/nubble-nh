@@ -24,6 +24,9 @@ export type AuthStackParamList = {
 
 export type AppStackParamList = {
   BottomTabStack: NavigatorScreenParams<AppBottomTabParamList>;
+  PostCommentScreen: {
+    postId: number;
+  };
   SettingsScreen: undefined;
 };
 
