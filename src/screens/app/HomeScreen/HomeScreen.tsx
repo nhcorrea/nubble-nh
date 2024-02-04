@@ -74,7 +74,7 @@ export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>): React.JSX.Elem
         refreshing={rest.isLoading}
         onEndReached={fetchNextPage}
         onEndReachedThreshold={0.1}
-        ListFooterComponent={ListFooterComponent(rest.isLoading)}
+        ListFooterComponent={ListFooterComponent(rest.isLoadingNextPage)}
       />
     </ScreenContainer>
   );

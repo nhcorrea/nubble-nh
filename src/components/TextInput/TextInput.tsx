@@ -71,7 +71,7 @@ export function TextInput({
   );
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   textInput: {
     padding: 0,
     fontFamily: fontFamily.regular.fontFamily,

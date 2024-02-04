@@ -1,11 +1,11 @@
 import React from 'react';
 
 import {Button, ScreenContainer, Text} from '@components';
-import {AppBottomTabScreenProps} from '@routes';
+import {AppTabScreensProps} from '@routes';
 
 export function MyProfileScreen({
   navigation,
-}: AppBottomTabScreenProps<'MyProfileScreen'>) {
+}: AppTabScreensProps<'MyProfileScreen'>) {
   return (
     <ScreenContainer>
       <Text variant="headingMedium">MyProfileScreen</Text>
