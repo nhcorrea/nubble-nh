@@ -67,6 +67,10 @@ export const theme = createTheme({
       ...typography.paragraphSmall,
       ...fontFamily.regular,
     },
+    paragraphSmallMedium: {
+      ...typography.paragraphSmall,
+      ...fontFamily.medium,
+    },
     paragraphCaption: {
       ...typography.paragraphCaption,
       ...fontFamily.regular,

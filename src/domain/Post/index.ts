@@ -1,2 +1,4 @@
+export * from './postService';
 export * from './postTypes';
-export * from './useCases';
+
+export * from './useCases/usePostList';

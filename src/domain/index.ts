@@ -1,3 +1,4 @@
 export * from './Post';
-export * from './hooks';
 export * from './PostComment';
+
+export * from './hooks';

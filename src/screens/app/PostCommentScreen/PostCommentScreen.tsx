@@ -1,9 +1,16 @@
 import React from 'react';
+import {FlatList, ListRenderItemInfo} from 'react-native';
 
-import {usePostCommentList} from '@domain';
+import {PostComment, usePostCommentList} from '@domain';
 
-import {Box, ScreenContainer, Text} from '@components';
+import {Box, ScreenContainer} from '@components';
 import {AppScreenProps} from '@routes';
+
+import {PostCommentItem} from './components/PostCommentItem';
+
+function ItemSeparatorComponent(): React.JSX.Element {
+  return <Box height={8} />;
+}
 
 export function PostCommentScreen({
   route,
@@ -11,12 +18,16 @@ export function PostCommentScreen({
   const {postId} = route.params;
   const {error, isLoading, list, ...rest} = usePostCommentList(postId);
 
-  console.log(list);
+  function renderItem({item}: ListRenderItemInfo<PostComment>) {
+    return <PostCommentItem postComment={item} />;
+  }
   return (
     <ScreenContainer title="Comentários" canGoBack>
-      <Box>
-        <Text variant="headingSmall">{list[0]?.message}</Text>
-      </Box>
+      <FlatList
+        data={list}
+        renderItem={renderItem}
+        ItemSeparatorComponent={ItemSeparatorComponent}
+      />
     </ScreenContainer>
   );
 }
