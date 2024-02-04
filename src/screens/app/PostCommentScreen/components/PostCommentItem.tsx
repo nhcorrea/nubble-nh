@@ -12,19 +12,19 @@ export function PostCommentItem({postComment}: Props): React.JSX.Element {
   const {
     author: {userName, profileURL},
     message,
-    // createdAt,
+    createAtRelative,
   } = postComment;
+
   return (
     <Box flexDirection="row" gap="s12" alignItems="center">
       <ProfileAvatar imageURL={profileURL} />
-      <Box>
+      <Box flex={1}>
         <Text variant="paragraphSmallBold" color="grayBlack">
           {userName}
         </Text>
         <Text variant="paragraphSmallMedium" color="gray1">
-          {message}
+          {message} - {createAtRelative}
         </Text>
-        {/* <Text>{createdAt}</Text> */}
       </Box>
     </Box>
   );

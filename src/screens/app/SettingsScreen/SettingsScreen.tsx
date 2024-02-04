@@ -1,9 +1,11 @@
 import React from 'react';
 
 import {Button, ScreenContainer, Text} from '@components';
-import {AppScreenProps} from '@routes';
+import {AppStackScreensProps} from '@routes';
 
-export function SettingsScreen({navigation}: AppScreenProps<'SettingsScreen'>) {
+export function SettingsScreen({
+  navigation,
+}: AppStackScreensProps<'SettingsScreen'>) {
   return (
     <ScreenContainer>
       <Text variant="headingMedium">SettingsScreen</Text>

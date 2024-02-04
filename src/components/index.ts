@@ -9,3 +9,4 @@ export * from './Form/FormPasswordInput';
 export * from './Form/FormTextInput';
 export * from './PostItem/PostItem';
 export * from './ProfileAvatar/ProfileAvatar';
+export * from './TextMessage/TextMessage';

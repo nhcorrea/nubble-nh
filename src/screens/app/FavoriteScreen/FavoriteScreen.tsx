@@ -1,11 +1,11 @@
 import React from 'react';
 
 import {Button, ScreenContainer, Text} from '@components';
-import {AppBottomTabScreenProps} from '@routes';
+import {AppTabScreensProps} from '@routes';
 
 export function FavoriteScreen({
   navigation,
-}: AppBottomTabScreenProps<'FavoriteScreen'>) {
+}: AppTabScreensProps<'FavoriteScreen'>) {
   return (
     <ScreenContainer>
       <Text variant="headingMedium">FavoriteScreen</Text>

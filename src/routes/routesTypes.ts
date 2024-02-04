@@ -51,3 +51,9 @@ export type AppTabScreensProps<T extends RouteBottomTab> = CompositeScreenProps<
   BottomTabScreenProps<AppBottomTabParamList, T>,
   NativeStackScreenProps<AppStackParamList>
 >;
+
+export type AppStackScreensProps<T extends RouteNamesApp> =
+  CompositeScreenProps<
+    NativeStackScreenProps<AppStackParamList, T>,
+    BottomTabScreenProps<AppBottomTabParamList>
+  >;
