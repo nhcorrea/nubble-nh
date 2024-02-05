@@ -7,23 +7,28 @@ import {TextMessage} from '@components';
 
 interface Props {
   postId: number;
+  onAddComment: () => void;
 }
 
-export function PostCommentTextMessage({postId}: Props): React.JSX.Element {
+export function PostCommentTextMessage({
+  postId,
+  onAddComment,
+}: Props): React.JSX.Element {
   const [message, setMessage] = useState('');
-  const {createComment} = usePostCommentCreate(postId);
-
-  async function onPressSend() {
-    await createComment(message);
-    setMessage('');
-    Keyboard.dismiss();
-  }
+  const {createComment} = usePostCommentCreate(postId, {
+    onSuccess: () => {
+      setMessage('');
+      Keyboard.dismiss();
+      onAddComment();
+    },
+  });
 
   return (
     <TextMessage
+      placeholder="Adicione um comentário"
       value={message}
       onChangeText={setMessage}
-      onPressSend={onPressSend}
+      onPressSend={createComment}
     />
   );
 }

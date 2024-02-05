@@ -29,7 +29,8 @@ export function PostCommentScreen({
   const {postId} = route.params;
   const {bottom} = useAppSafeArea();
   const {spacing} = useAppTheme();
-  const {list, hasNextPage, fetchNextPage} = usePostCommentList(postId);
+  const {list, hasNextPage, fetchNextPage, refresh} =
+    usePostCommentList(postId);
 
   return (
     <ScreenContainer title="Comentários" canGoBack>
@@ -47,7 +48,7 @@ export function PostCommentScreen({
           />
         }
       />
-      <PostCommentTextMessage postId={postId} />
+      <PostCommentTextMessage onAddComment={refresh} postId={postId} />
     </ScreenContainer>
   );
 }
