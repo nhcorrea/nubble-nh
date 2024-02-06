@@ -16,6 +16,7 @@ import {
 interface RenderItemProps
   extends Omit<ListRenderItemInfo<PostComment>, 'index' | 'separators'> {
   onRemoveComment: () => Promise<void>;
+  postAuthorId: number;
 }
 
 function ItemSeparatorComponent(): React.JSX.Element {
@@ -25,16 +26,21 @@ function ItemSeparatorComponent(): React.JSX.Element {
 function renderItem({
   item,
   onRemoveComment,
+  postAuthorId,
 }: RenderItemProps): React.JSX.Element {
   return (
-    <PostCommentItem postComment={item} onRemoveComment={onRemoveComment} />
+    <PostCommentItem
+      postComment={item}
+      onRemoveComment={onRemoveComment}
+      postAuthorId={postAuthorId}
+    />
   );
 }
 
 export function PostCommentScreen({
   route,
 }: AppScreenProps<'PostCommentScreen'>): React.JSX.Element {
-  const {postId} = route.params;
+  const {postId, postAuthorId} = route.params;
   const {bottom} = useAppSafeArea();
   const {spacing} = useAppTheme();
   const {list, hasNextPage, fetchNextPage, refresh} =
@@ -46,7 +52,9 @@ export function PostCommentScreen({
         keyExtractor={item => item.id.toString()}
         showsVerticalScrollIndicator={false}
         data={list}
-        renderItem={({item}) => renderItem({item, onRemoveComment: refresh})}
+        renderItem={({item}) =>
+          renderItem({item, onRemoveComment: refresh, postAuthorId})
+        }
         contentContainerStyle={{paddingBottom: bottom, paddingTop: spacing.s24}}
         ItemSeparatorComponent={ItemSeparatorComponent}
         ListFooterComponent={

@@ -1,18 +1,25 @@
 import React from 'react';
 import {Alert, Pressable} from 'react-native';
 
-import {PostComment, usePostCommentRemove} from '@domain';
+import {
+  PostComment,
+  useIsAllowedToRemove,
+  usePostCommentRemove,
+  useUser,
+} from '@domain';
 
 import {Box, ProfileAvatar, Text} from '@components';
 
 interface Props {
   postComment: PostComment;
+  postAuthorId: number;
   onRemoveComment: () => void;
 }
 
 export function PostCommentItem({
   postComment,
   onRemoveComment,
+  postAuthorId,
 }: Props): React.JSX.Element {
   const {
     author: {userName, profileURL},
@@ -21,7 +28,13 @@ export function PostCommentItem({
   } = postComment;
 
   const {removeComment} = usePostCommentRemove({onSuccess: onRemoveComment});
-  // const {} = useIsAllowedToRemove(postComment, )
+  const {id} = useUser();
+
+  const {isAllowedToRemove} = useIsAllowedToRemove(
+    postComment,
+    postAuthorId,
+    id,
+  );
 
   function confirmRemoveComment() {
     Alert.alert('Deseja remover o comentário ?', 'Pressione confirmar', [
@@ -37,7 +50,8 @@ export function PostCommentItem({
   }
 
   return (
-    <Pressable onLongPress={confirmRemoveComment}>
+    <Pressable
+      onLongPress={isAllowedToRemove ? confirmRemoveComment : undefined}>
       <Box flexDirection="row" gap="s12" alignItems="center">
         <ProfileAvatar imageURL={profileURL} />
         <Box flex={1}>
