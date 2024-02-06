@@ -13,7 +13,8 @@
       "@utils": ["./src/utils"],
       "@brand": ["./src/assets/brand"],
       "@api": ["./src/api"],
-      "@types": ["./src/types"]
+      "@types": ["./src/types"],
+      "@infra": ["./src/infra"],
     }
   }
 }

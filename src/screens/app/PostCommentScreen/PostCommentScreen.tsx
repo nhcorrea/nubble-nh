@@ -13,14 +13,22 @@ import {
   PostCommentTextMessage,
 } from './components';
 
+interface RenderItemProps
+  extends Omit<ListRenderItemInfo<PostComment>, 'index' | 'separators'> {
+  onRemoveComment: () => Promise<void>;
+}
+
 function ItemSeparatorComponent(): React.JSX.Element {
   return <Box height={8} />;
 }
 
 function renderItem({
   item,
-}: ListRenderItemInfo<PostComment>): React.JSX.Element {
-  return <PostCommentItem postComment={item} />;
+  onRemoveComment,
+}: RenderItemProps): React.JSX.Element {
+  return (
+    <PostCommentItem postComment={item} onRemoveComment={onRemoveComment} />
+  );
 }
 
 export function PostCommentScreen({
@@ -38,7 +46,7 @@ export function PostCommentScreen({
         keyExtractor={item => item.id.toString()}
         showsVerticalScrollIndicator={false}
         data={list}
-        renderItem={renderItem}
+        renderItem={({item}) => renderItem({item, onRemoveComment: refresh})}
         contentContainerStyle={{paddingBottom: bottom, paddingTop: spacing.s24}}
         ItemSeparatorComponent={ItemSeparatorComponent}
         ListFooterComponent={
