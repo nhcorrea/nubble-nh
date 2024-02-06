@@ -10,6 +10,7 @@ function toPost(postApi: PostAPI): Post {
     id: postApi.id,
     text: postApi.text,
     author: {
+      id: postApi.user.id,
       name: postApi.user.full_name,
       userName: postApi.user.username,
       profileURL: postApi.user.profile_url,
