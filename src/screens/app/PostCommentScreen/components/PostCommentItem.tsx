@@ -1,12 +1,7 @@
 import React from 'react';
 import {Alert, Pressable} from 'react-native';
 
-import {
-  PostComment,
-  useIsAllowedToRemove,
-  usePostCommentRemove,
-  useUser,
-} from '@domain';
+import {PostComment, useIsAllowedToRemove, usePostCommentRemove} from '@domain';
 import {useToastService} from '@services';
 
 import {Box, ProfileAvatar, Text} from '@components';
@@ -30,7 +25,6 @@ export function PostCommentItem({
 
   const {showToast} = useToastService();
   const {removeComment} = usePostCommentRemove({onSuccess});
-  const {id} = useUser();
 
   function onSuccess() {
     onRemoveComment();
@@ -45,7 +39,7 @@ export function PostCommentItem({
   const {isAllowedToRemove} = useIsAllowedToRemove(
     postComment,
     postAuthorId,
-    id,
+    1,
   );
 
   function confirmRemoveComment() {
