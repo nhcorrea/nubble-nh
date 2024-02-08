@@ -25,3 +25,4 @@ export * from './SettingsIcon';
 export * from './TrashIcon';
 export * from './CheckRoundIcon';
 export * from './MessageRoundIcon';
+export * from './CloseIcon';
