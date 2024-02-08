@@ -31,12 +31,9 @@ export async function create(
 }
 
 async function remove(postCommentId: number): Promise<{message: string}> {
-  console.log(PATH + '/' + postCommentId);
   const response = await api.delete<{message: string}>(
     `${PATH}/${postCommentId}`,
   );
-
-  console.log(response);
 
   return response.data;
 }

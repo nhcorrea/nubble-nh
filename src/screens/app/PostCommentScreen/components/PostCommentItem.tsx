@@ -7,6 +7,7 @@ import {
   usePostCommentRemove,
   useUser,
 } from '@domain';
+import {useToastService} from '@services';
 
 import {Box, ProfileAvatar, Text} from '@components';
 
@@ -27,8 +28,19 @@ export function PostCommentItem({
     createAtRelative,
   } = postComment;
 
-  const {removeComment} = usePostCommentRemove({onSuccess: onRemoveComment});
+  const {showToast} = useToastService();
+  const {removeComment} = usePostCommentRemove({onSuccess});
   const {id} = useUser();
+
+  function onSuccess() {
+    onRemoveComment();
+    showToast({
+      duration: 4000,
+      message: 'Comentário removido',
+      type: 'success',
+      position: 'bottom',
+    });
+  }
 
   const {isAllowedToRemove} = useIsAllowedToRemove(
     postComment,

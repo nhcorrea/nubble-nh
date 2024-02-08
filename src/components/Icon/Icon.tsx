@@ -29,6 +29,7 @@ import {
   TrashIcon,
   CheckRoundIcon,
   MessageRoundIcon,
+  CloseIcon,
 } from '@icons';
 
 import {useAppTheme} from '@hooks';
@@ -62,6 +63,7 @@ const IconRegistry = {
   Search: SearchIcon,
   Settings: SettingsIcon,
   Trash: TrashIcon,
+  Close: CloseIcon,
 };
 
 type IconRegistryType = typeof IconRegistry;
