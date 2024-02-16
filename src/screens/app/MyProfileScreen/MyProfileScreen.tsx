@@ -1,5 +1,11 @@
 import React from 'react';
-import {ActivityIndicator, Image, StyleSheet} from 'react-native';
+import {
+  ActivityIndicator,
+  Image,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+} from 'react-native';
 
 import {useUserGetById} from '@domain';
 
@@ -10,14 +16,22 @@ export function MyProfileScreen({
   route,
 }: AppTabScreensProps<'MyProfileScreen'>): React.JSX.Element {
   const {userId} = route.params;
-  const {user, error, isLoading} = useUserGetById(userId);
+  const {user, isError, isLoading, isFetching, refetch} =
+    useUserGetById(userId);
 
   return (
-    <ScreenContainer canGoBack title="Meu perfil">
+    <ScreenContainer canGoBack flex={1} title="Meu perfil">
       {isLoading && <ActivityIndicator size="large" color="primary" />}
-      {error && <Text variant="paragraphMedium">Erro ao carregar perfil</Text>}
-      {user && (
-        <Box gap="s16" alignItems="center" mt="s24">
+      {isError && (
+        <Text variant="paragraphMedium">Erro ao carregar perfil</Text>
+      )}
+      <ScrollView
+        // eslint-disable-next-line react-native/no-inline-styles
+        style={{flex: 1}}
+        refreshControl={
+          <RefreshControl onRefresh={refetch} refreshing={isFetching} />
+        }>
+        <Box gap="s16" alignItems="center" mt="s24" flex={1}>
           <Image source={{uri: user?.profileUrl}} style={styles.avatar} />
           <Box gap="s4" alignItems="center">
             <Text variant="headingMedium" color="grayBlack">
@@ -28,7 +42,7 @@ export function MyProfileScreen({
             </Text>
           </Box>
         </Box>
-      )}
+      </ScrollView>
     </ScreenContainer>
   );
 }

@@ -15,7 +15,7 @@ import {
 
 interface RenderItemProps
   extends Omit<ListRenderItemInfo<PostComment>, 'index' | 'separators'> {
-  onRemoveComment: () => Promise<void>;
+  onRemoveComment: () => void;
   postAuthorId: number;
 }
 
