@@ -35,7 +35,9 @@ export type AppBottomTabParamList = {
   HomeScreen: undefined;
   NewPostScreen: undefined;
   FavoriteScreen: undefined;
-  MyProfileScreen: undefined;
+  MyProfileScreen: {
+    userId: number;
+  };
 };
 
 export type AuthScreenProps<T extends RouteNamesAuth> = NativeStackScreenProps<

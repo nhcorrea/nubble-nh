@@ -15,7 +15,7 @@ import {
 
 interface RenderItemProps
   extends Omit<ListRenderItemInfo<PostComment>, 'index' | 'separators'> {
-  onRemoveComment: () => Promise<void>;
+  postId: number;
   postAuthorId: number;
 }
 
@@ -23,18 +23,8 @@ function ItemSeparatorComponent(): React.JSX.Element {
   return <Box height={8} />;
 }
 
-function renderItem({
-  item,
-  onRemoveComment,
-  postAuthorId,
-}: RenderItemProps): React.JSX.Element {
-  return (
-    <PostCommentItem
-      postComment={item}
-      onRemoveComment={onRemoveComment}
-      postAuthorId={postAuthorId}
-    />
-  );
+function renderItem({item, ...props}: RenderItemProps): React.JSX.Element {
+  return <PostCommentItem postComment={item} {...props} />;
 }
 
 export function PostCommentScreen({
@@ -43,8 +33,7 @@ export function PostCommentScreen({
   const {postId, postAuthorId} = route.params;
   const {bottom} = useAppSafeArea();
   const {spacing} = useAppTheme();
-  const {list, hasNextPage, fetchNextPage, refresh} =
-    usePostCommentList(postId);
+  const {list, hasNextPage, fetchNextPage} = usePostCommentList(postId);
 
   return (
     <ScreenContainer title="Comentários" canGoBack>
@@ -52,9 +41,7 @@ export function PostCommentScreen({
         keyExtractor={item => item.id.toString()}
         showsVerticalScrollIndicator={false}
         data={list}
-        renderItem={({item}) =>
-          renderItem({item, onRemoveComment: refresh, postAuthorId})
-        }
+        renderItem={({item}) => renderItem({item, postId, postAuthorId})}
         contentContainerStyle={{paddingBottom: bottom, paddingTop: spacing.s24}}
         ItemSeparatorComponent={ItemSeparatorComponent}
         ListFooterComponent={
@@ -64,7 +51,7 @@ export function PostCommentScreen({
           />
         }
       />
-      <PostCommentTextMessage onAddComment={refresh} postId={postId} />
+      <PostCommentTextMessage postId={postId} />
     </ScreenContainer>
   );
 }

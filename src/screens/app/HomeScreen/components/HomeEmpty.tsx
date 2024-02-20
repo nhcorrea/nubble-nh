@@ -6,7 +6,7 @@ import {useAppTheme} from '@hooks';
 
 interface Props {
   isLoading: boolean;
-  error: unknown;
+  isError: unknown;
   refresh: () => void;
 }
 
@@ -17,7 +17,7 @@ function handleMessage(error: unknown) {
   return error ? ERROS_MESSAGE : EMPTY_MESSAGE;
 }
 
-function Component({isLoading, error, refresh}: Props): React.JSX.Element {
+function Component({isLoading, isError, refresh}: Props): React.JSX.Element {
   const {colors} = useAppTheme();
 
   if (isLoading) {
@@ -26,9 +26,9 @@ function Component({isLoading, error, refresh}: Props): React.JSX.Element {
   return (
     <>
       <Text variant="paragraphMediumBold" mb="s16">
-        {handleMessage(error)}
+        {handleMessage(isError)}
       </Text>
-      {error && (
+      {isError && (
         <Button
           preset="outline"
           padding="s16"
