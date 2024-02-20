@@ -7,14 +7,14 @@ import {useToastService} from '@services';
 import {Box, ProfileAvatar, Text} from '@components';
 
 interface Props {
+  postId: number;
   postComment: PostComment;
   postAuthorId: number;
-  onRemoveComment: () => void;
 }
 
 export function PostCommentItem({
+  postId,
   postComment,
-  onRemoveComment,
   postAuthorId,
 }: Props): React.JSX.Element {
   const {
@@ -24,10 +24,9 @@ export function PostCommentItem({
   } = postComment;
 
   const {showToast} = useToastService();
-  const {removeComment} = usePostCommentRemove({onSuccess});
+  const {removeComment} = usePostCommentRemove(postId, {onSuccess});
 
   function onSuccess() {
-    onRemoveComment();
     showToast({
       duration: 4000,
       message: 'Comentário removido',

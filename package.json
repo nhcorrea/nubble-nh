@@ -11,6 +11,7 @@
     "android-clean": "cd android && ./gradlew clean && rm -rf ./build && cd ..",
     "node-clean": "rm -rf yarn.lock && rm -rf bun.lockb && rm -rf node_modules",
     "pod-install": "cd ios && pod install && cd ../",
+    "pod-reset": "cd ios && rm -rf build && rm -rf Pods && rm -rf Podfile.lock && pod deintegrate && pod install && cd ../",
     "generate-apk": "cd android && ./gradlew assembleRelease && cd app/build/outputs/apk/release && adb install app-release.apk && cd ../../../../",
     "prepare": "husky install"
   },
