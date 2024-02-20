@@ -11,6 +11,7 @@
     "android-clean": "cd android && ./gradlew clean && rm -rf ./build && cd ..",
     "node-clean": "rm -rf yarn.lock && rm -rf bun.lockb && rm -rf node_modules",
     "pod-install": "cd ios && pod install && cd ../",
+    "pod-reset": "cd ios && rm -rf build && rm -rf Pods && rm -rf Podfile.lock && pod deintegrate && pod install && cd ../",
     "generate-apk": "cd android && ./gradlew assembleRelease && cd app/build/outputs/apk/release && adb install app-release.apk && cd ../../../../",
     "prepare": "husky install"
   },
@@ -20,6 +21,7 @@
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.16",
     "@shopify/restyle": "^2.4.2",
+    "@tanstack/react-query": "^5.20.5",
     "axios": "^1.6.5",
     "date-fns": "^3.3.1",
     "react": "18.2.0",
@@ -39,6 +41,7 @@
     "@react-native/eslint-config": "^0.73.2",
     "@react-native/metro-config": "0.73.5",
     "@react-native/typescript-config": "0.73.1",
+    "@tanstack/eslint-plugin-query": "^5.20.1",
     "@tsconfig/react-native": "^3.0.0",
     "@types/metro-config": "^0.76.3",
     "@types/react": "^18.2.6",
