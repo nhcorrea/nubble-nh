@@ -12,6 +12,7 @@ interface Variables {
 
 export function useAuthSignIn(options?: MutationOptions<AuthCredentials>) {
   const {saveAuthCrendentials} = useAuthCredentials();
+
   const {mutate, isPending, isError} = useMutation<
     AuthCredentials,
     Error,
@@ -26,7 +27,6 @@ export function useAuthSignIn(options?: MutationOptions<AuthCredentials>) {
     },
     onSuccess: authCredentials => {
       saveAuthCrendentials(authCredentials);
-      authService.updateToken(authCredentials.token);
     },
   });
 

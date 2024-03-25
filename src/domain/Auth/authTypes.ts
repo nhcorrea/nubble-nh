@@ -13,6 +13,22 @@ export interface SignInParams {
   password: string;
 }
 
+export interface SignUpAPI {
+  firstName: string;
+  lastName: string;
+  username: string;
+  email: string;
+  password: string;
+}
+
+export interface SignUpParams {
+  firstName: string;
+  lastName: string;
+  username: string;
+  email: string;
+  password: string;
+}
+
 export interface UserAuthAPI {
   id: number;
   first_name: string;

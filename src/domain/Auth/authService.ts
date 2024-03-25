@@ -1,6 +1,6 @@
 import {toUser} from './authAdapter';
 import {authApi} from './authApi';
-import {AuthCredentials, SignInParams} from './authTypes';
+import {AuthCredentials, SignInParams, SignUpParams} from './authTypes';
 
 async function signIn(params: SignInParams): Promise<AuthCredentials> {
   try {
@@ -13,6 +13,10 @@ async function signIn(params: SignInParams): Promise<AuthCredentials> {
   } catch (err) {
     throw new Error('Error SignIn');
   }
+}
+
+async function signUp(params: SignUpParams): Promise<void> {
+  await authApi.signUp(params);
 }
 
 async function signOut(): Promise<string> {
@@ -31,6 +35,7 @@ function removeToken(): void {
 
 export const authService = {
   signIn,
+  signUp,
   signOut,
   updateToken,
   removeToken,

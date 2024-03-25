@@ -29,15 +29,16 @@ export type AppStackParamList = {
     postAuthorId: number;
   };
   SettingsScreen: undefined;
+  ProfileScreen: {
+    userId: number;
+  };
 };
 
 export type AppBottomTabParamList = {
   HomeScreen: undefined;
   NewPostScreen: undefined;
   FavoriteScreen: undefined;
-  MyProfileScreen: {
-    userId: number;
-  };
+  MyProfileScreen: undefined;
 };
 
 export type AuthScreenProps<T extends RouteNamesAuth> = NativeStackScreenProps<
