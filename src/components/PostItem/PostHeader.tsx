@@ -11,10 +11,7 @@ type Props = Pick<Post, 'author'>;
 export function PostHeader({author}: Props) {
   const navigation = useAppNavigation();
   function onPress() {
-    navigation.navigate('BottomTabStack', {
-      screen: 'MyProfileScreen',
-      params: {userId: author.id},
-    });
+    navigation.navigate('ProfileScreen', {userId: author.id});
   }
 
   return (

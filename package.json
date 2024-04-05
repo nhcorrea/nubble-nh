@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint-prettier": "prettier ./src --write && eslint ./src",
@@ -11,9 +12,8 @@
     "android-clean": "cd android && ./gradlew clean && rm -rf ./build && cd ..",
     "node-clean": "rm -rf yarn.lock && rm -rf bun.lockb && rm -rf node_modules",
     "pod-install": "cd ios && pod install && cd ../",
-    "pod-reset": "cd ios && rm -rf build && rm -rf Pods && rm -rf Podfile.lock && pod deintegrate && pod install && cd ../",
-    "generate-apk": "cd android && ./gradlew assembleRelease && cd app/build/outputs/apk/release && adb install app-release.apk && cd ../../../../",
-    "prepare": "husky install"
+    "pod-clean": "rm -rf ~/Library/Caches/CocoaPods && rm -rf ~/Library/Developer/Xcode/DerivedData/* && cd ios && rm -rf ./Pods && rm -rf ./build && rm -rf ./Podfile.lock && pod deintegrate && pod setup && pod install && cd ..",
+    "generate-apk": "cd android && ./gradlew assembleRelease && cd app/build/outputs/apk/release && adb install app-release.apk && cd ../../../../"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
