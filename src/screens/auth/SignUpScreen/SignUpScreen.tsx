@@ -4,7 +4,14 @@ import {useAuthSignUp} from '@domain';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
 
-import {Box, Button, Text, ScreenContainer, FormTextInput} from '@components';
+import {
+  Box,
+  Button,
+  Text,
+  ScreenContainer,
+  FormTextInput,
+  FormPasswordInput,
+} from '@components';
 import {useResetNavigation} from '@hooks';
 import {AuthStackParamList} from '@routes';
 
@@ -82,7 +89,7 @@ export function SignUpScreen() {
             keyboardType="email-address"
           />
 
-          <FormTextInput
+          <FormPasswordInput
             control={control}
             name="password"
             placeholder="Digite sua senha"
