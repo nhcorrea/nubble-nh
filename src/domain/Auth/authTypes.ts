@@ -55,6 +55,11 @@ export interface UserAuth {
   fullName: string;
 }
 
+export interface ValidateAPI {
+  message: string;
+  isAvailable: boolean;
+}
+
 export interface AuthCredentials {
   token: string;
   user: UserAuth;

@@ -1,6 +1,7 @@
 import React from 'react';
+import {ActivityIndicator} from 'react-native';
 
-import {useAuthSignUp} from '@domain';
+import {useAuthIsUsernameAvailable, useAuthSignUp} from '@domain';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
 
@@ -45,11 +46,25 @@ export function SignUpScreen() {
   async function submitForm(formData: SignUpSchema) {
     await signUp(formData);
   }
-  const {control, handleSubmit} = useForm<SignUpSchema>({
-    defaultValues: DEFAULT_VALUES,
-    resolver: zodResolver(signUpSchema),
-    mode: 'onChange',
+  const {control, handleSubmit, watch, getFieldState, formState} =
+    useForm<SignUpSchema>({
+      defaultValues: DEFAULT_VALUES,
+      resolver: zodResolver(signUpSchema),
+      mode: 'onChange',
+    });
+
+  const username = watch('username');
+  const usernameState = getFieldState('username');
+
+  const usernameCanSubmit = usernameState.isDirty && !usernameState.invalid;
+
+  const usernameQuery = useAuthIsUsernameAvailable({
+    username,
+    enabled: usernameCanSubmit,
   });
+
+  const disableSubmit =
+    !formState.isValid || usernameQuery.isFetching || usernameState.invalid;
 
   return (
     <ScreenContainer scrollEnabled canGoBack>
@@ -63,6 +78,11 @@ export function SignUpScreen() {
             name="username"
             placeholder="@"
             label="Seu username"
+            RightComponent={
+              usernameQuery.isFetching ? (
+                <ActivityIndicator size="small" />
+              ) : undefined
+            }
           />
 
           <FormTextInput
@@ -101,6 +121,7 @@ export function SignUpScreen() {
           title="Criar uma conta"
           onPress={handleSubmit(submitForm)}
           loading={isLoading}
+          disabled={disableSubmit}
         />
       </Box>
     </ScreenContainer>

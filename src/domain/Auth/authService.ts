@@ -33,10 +33,24 @@ function removeToken(): void {
   authApi.removeToken();
 }
 
+async function isUsernameAvailable(username: string): Promise<boolean> {
+  const {isAvailable} = await authApi.validateUsername(username);
+
+  return isAvailable;
+}
+
+async function isEmailAvailable(email: string): Promise<boolean> {
+  const {isAvailable} = await authApi.validateEmail(email);
+
+  return isAvailable;
+}
+
 export const authService = {
   signIn,
   signUp,
   signOut,
   updateToken,
   removeToken,
+  isUsernameAvailable,
+  isEmailAvailable,
 };
