@@ -36,6 +36,14 @@ async function validateEmail(email: string): Promise<ValidateAPI> {
   return response.data;
 }
 
+async function forgotPassword(email: string): Promise<{message: string}> {
+  const response = await api.post<{message: string}>('/forgot-password', null, {
+    params: {email},
+  });
+
+  return response.data;
+}
+
 function updateToken(token: string): void {
   api.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
@@ -52,4 +60,5 @@ export const authApi = {
   removeToken,
   validateUsername,
   validateEmail,
+  forgotPassword,
 };
