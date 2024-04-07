@@ -5,27 +5,64 @@ import {useDebounce} from '@hooks';
 
 import {authService} from '../authService';
 
-interface Props {
+interface Props<T extends {length: number}> {
+  value: T;
+  enabled: boolean;
+  queryKey: QueryKeys;
+  isAvailableFn: (value: T) => Promise<boolean>;
+}
+
+interface UseIsUsernameAvailable {
   username: string;
   enabled: boolean;
 }
 
-export function useAuthIsUsernameAvailable({username, enabled}: Props) {
-  const debouncedUsername = useDebounce({value: username, delay: 1500});
+interface UseIsEmailAvailable {
+  email: string;
+  enabled: boolean;
+}
 
-  const {data, isFetching, isError} = useQuery({
-    queryKey: [QueryKeys.IsUsernameAvailable, debouncedUsername],
-    queryFn: () => authService.isUsernameAvailable(debouncedUsername),
+export function useAuthIsValueAvailable<T extends {length: number}>({
+  value,
+  enabled,
+  queryKey,
+  isAvailableFn,
+}: Props<T>) {
+  const debouncedValue = useDebounce({value, delay: 1500});
+
+  const {data, isFetching} = useQuery({
+    queryKey: [queryKey, debouncedValue],
+    queryFn: () => isAvailableFn(debouncedValue),
     retry: false,
     staleTime: 10000,
-    enabled: enabled && debouncedUsername.length > 0,
+    enabled: enabled && debouncedValue.length > 0,
   });
 
-  const isDebouncing = debouncedUsername !== username;
+  const isDebouncing = debouncedValue !== value;
 
   return {
-    isAvailable: !!data,
+    isUnavailable: data === false,
     isFetching: isFetching || isDebouncing,
-    isError,
   };
+}
+
+export function useAuthIsUsernameAvailable({
+  username,
+  enabled,
+}: UseIsUsernameAvailable) {
+  return useAuthIsValueAvailable({
+    value: username,
+    isAvailableFn: authService.isUsernameAvailable,
+    queryKey: QueryKeys.IsUsernameAvailable,
+    enabled,
+  });
+}
+
+export function useAuthIsEmailAvailable({email, enabled}: UseIsEmailAvailable) {
+  return useAuthIsValueAvailable({
+    value: email,
+    isAvailableFn: authService.isEmailAvailable,
+    queryKey: QueryKeys.IsEmailAvailable,
+    enabled,
+  });
 }

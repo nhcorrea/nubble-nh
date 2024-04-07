@@ -1,7 +1,11 @@
 import React from 'react';
 import {ActivityIndicator} from 'react-native';
 
-import {useAuthIsUsernameAvailable, useAuthSignUp} from '@domain';
+import {
+  useAuthIsEmailAvailable,
+  useAuthIsUsernameAvailable,
+  useAuthSignUp,
+} from '@domain';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
 
@@ -17,6 +21,7 @@ import {useResetNavigation} from '@hooks';
 import {AuthStackParamList} from '@routes';
 
 import {SignUpSchema, signUpSchema} from './signUpSchema';
+import {useAsyncValidation} from './useAsyncValidation';
 
 const RESET_PARAMS: AuthStackParamList['SuccessScreen'] = {
   title: 'Sua conta foi criada com sucesso!',
@@ -53,18 +58,19 @@ export function SignUpScreen() {
       mode: 'onChange',
     });
 
-  const username = watch('username');
-  const usernameState = getFieldState('username');
-
-  const usernameCanSubmit = usernameState.isDirty && !usernameState.invalid;
-
-  const usernameQuery = useAuthIsUsernameAvailable({
-    username,
-    enabled: usernameCanSubmit,
+  const usenameAsyncValidation = useAsyncValidation({
+    watch,
+    getFieldState,
+    value: 'username',
+    callbackFn: useAuthIsUsernameAvailable,
   });
 
-  const disableSubmit =
-    !formState.isValid || usernameQuery.isFetching || usernameState.invalid;
+  const emailAsyncValidation = useAsyncValidation({
+    watch,
+    getFieldState,
+    value: 'email',
+    callbackFn: useAuthIsEmailAvailable,
+  });
 
   return (
     <ScreenContainer scrollEnabled canGoBack>
@@ -78,8 +84,9 @@ export function SignUpScreen() {
             name="username"
             placeholder="@"
             label="Seu username"
+            errorMessage={usenameAsyncValidation.errorMessage}
             RightComponent={
-              usernameQuery.isFetching ? (
+              usenameAsyncValidation.isFetching ? (
                 <ActivityIndicator size="small" />
               ) : undefined
             }
@@ -107,6 +114,12 @@ export function SignUpScreen() {
             placeholder="Digite seu e-mail"
             label="E-mail"
             keyboardType="email-address"
+            errorMessage={emailAsyncValidation.errorMessage}
+            RightComponent={
+              emailAsyncValidation.isFetching ? (
+                <ActivityIndicator size="small" />
+              ) : undefined
+            }
           />
 
           <FormPasswordInput
@@ -121,7 +134,11 @@ export function SignUpScreen() {
           title="Criar uma conta"
           onPress={handleSubmit(submitForm)}
           loading={isLoading}
-          disabled={disableSubmit}
+          disabled={
+            !formState.isValid ||
+            usenameAsyncValidation.disableSubmit ||
+            emailAsyncValidation.disableSubmit
+          }
         />
       </Box>
     </ScreenContainer>
