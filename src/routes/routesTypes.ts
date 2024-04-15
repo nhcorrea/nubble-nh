@@ -11,14 +11,16 @@ type RouteNamesAuth = keyof AuthStackParamList;
 type RouteNamesApp = keyof AppStackParamList;
 type RouteBottomTab = keyof AppBottomTabParamList;
 
+interface SuccessScreenProps {
+  title: string;
+  description: string;
+  icon: Pick<IconProps, 'name' | 'color'>;
+}
+
 export type AuthStackParamList = {
   LoginScreen: undefined;
   SignUpScreen: undefined;
-  SuccessScreen: {
-    title: string;
-    description: string;
-    icon: Pick<IconProps, 'name' | 'color'>;
-  };
+  SuccessScreen: SuccessScreenProps;
   ForgotPassword: undefined;
 };
 
@@ -29,15 +31,16 @@ export type AppStackParamList = {
     postAuthorId: number;
   };
   SettingsScreen: undefined;
+  ProfileScreen: {
+    userId: number;
+  };
 };
 
 export type AppBottomTabParamList = {
   HomeScreen: undefined;
   NewPostScreen: undefined;
   FavoriteScreen: undefined;
-  MyProfileScreen: {
-    userId: number;
-  };
+  MyProfileScreen: undefined;
 };
 
 export type AuthScreenProps<T extends RouteNamesAuth> = NativeStackScreenProps<
