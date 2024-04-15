@@ -6,6 +6,8 @@ export interface SignInAPI {
 interface AuthAPI {
   type: string;
   token: string;
+  refreshToken: string;
+  expires_at: string;
 }
 
 export interface SignInParams {
@@ -62,5 +64,7 @@ export interface ValidateAPI {
 
 export interface AuthCredentials {
   token: string;
+  tokenExpiresAt: string;
+  refreshToken: string;
   user: UserAuth;
 }

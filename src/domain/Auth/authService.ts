@@ -8,6 +8,8 @@ async function signIn(params: SignInParams): Promise<AuthCredentials> {
 
     return {
       token: auth.token,
+      tokenExpiresAt: auth.expires_at,
+      refreshToken: auth.refreshToken,
       user: toUser(user),
     };
   } catch (err) {
@@ -51,6 +53,19 @@ async function requestNewPassword(email: string): Promise<string> {
   return message;
 }
 
+async function authByRefreshToken(
+  refreshToken: string,
+): Promise<AuthCredentials> {
+  const {auth, user} = await authApi.refreshToken(refreshToken);
+
+  return {
+    token: auth.token,
+    tokenExpiresAt: auth.expires_at,
+    refreshToken: auth.refreshToken,
+    user: toUser(user),
+  };
+}
+
 export const authService = {
   signIn,
   signUp,
@@ -60,4 +75,6 @@ export const authService = {
   isUsernameAvailable,
   isEmailAvailable,
   requestNewPassword,
+  authByRefreshToken,
+  isRefreshTokenRequest: authApi.isRefreshTokenRequest,
 };
