@@ -1,5 +1,6 @@
 export function capitalizeFirstLetter(value: string) {
   return value
+    .trim()
     .split(' ')
     .map(
       name =>
