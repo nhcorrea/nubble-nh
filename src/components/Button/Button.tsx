@@ -60,12 +60,13 @@ export const TouchableOpacityBox = createRestyleComponent<
   TouchableOpacity,
 );
 
-interface ButtonProps extends TouchableOpacityBoxProps {
+export interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;
   loading?: boolean;
   preset?: ButtonPresets;
   disabled?: boolean;
 }
+
 export function Button({
   title,
   loading,
@@ -88,7 +89,11 @@ export function Button({
       {...ButtonUI.container}
       {...TouchableOpacityProps}>
       {loading ? (
-        <ActivityIndicator size="large" color={colors[ButtonUI.content]} />
+        <ActivityIndicator
+          testID="loading-indicator"
+          size="large"
+          color={colors[ButtonUI.content]}
+        />
       ) : (
         <Text color={ButtonUI.content} variant="paragraphMediumBold">
           {title}
