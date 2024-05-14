@@ -6,7 +6,7 @@ import {userService} from '../userService';
 export function useUserGetById(id: number) {
   const {data, isLoading, refetch, isFetching, isError} = useQuery({
     queryKey: [QueryKeys.UserGetById, id],
-    queryFn: () => userService.getById(id),
+    queryFn: () => userService.getUserById(id),
     staleTime: 1000 * 16,
     gcTime: 1000 * 20,
   });

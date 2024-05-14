@@ -1,7 +1,9 @@
 import React from 'react';
-import {Alert, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 
+import {useAuthSignIn} from '@domain';
 import {zodResolver} from '@hookform/resolvers/zod';
+import {useToastService} from '@services';
 import {useForm} from 'react-hook-form';
 
 import {
@@ -23,9 +25,17 @@ export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
   function navigateToForgotPassword() {
     navigation.navigate('ForgotPassword');
   }
+
+  const {showToast} = useToastService();
   function submitForm({email, password}: LoginSchema) {
-    Alert.alert(email, password);
+    signIn({email, password});
   }
+
+  const {isLoading, signIn} = useAuthSignIn({
+    onError: message => {
+      showToast({message, type: 'error', position: 'bottom'});
+    },
+  });
 
   const {control, formState, handleSubmit} = useForm<LoginSchema>({
     defaultValues: {
@@ -69,6 +79,7 @@ export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
       </TouchableOpacity>
       <Box mt="s48" gap="s12">
         <Button
+          loading={isLoading}
           disabled={!formState.isValid}
           onPress={handleSubmit(submitForm)}
           title="Entrar"

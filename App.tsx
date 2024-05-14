@@ -1,26 +1,22 @@
 import React from 'react';
 
-import {ThemeProvider} from '@shopify/restyle';
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {ContextStackProvider, StateStack, UtilityStack} from '@providers';
+import {initializeStorage, MMKVStorage} from '@services';
 
 import {Toast} from '@components';
 import {Router} from '@routes';
-import {theme} from '@theme';
 
-/*TODO: fonts no ios*/
-
-const queryClient = new QueryClient();
+initializeStorage(MMKVStorage);
 
 export function App(): React.JSX.Element {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <SafeAreaProvider>
+    <StateStack>
+      <UtilityStack>
+        <ContextStackProvider>
           <Router />
           <Toast />
-        </SafeAreaProvider>
-      </ThemeProvider>
-    </QueryClientProvider>
+        </ContextStackProvider>
+      </UtilityStack>
+    </StateStack>
   );
 }
