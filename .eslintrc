@@ -1,10 +1,18 @@
 {
   "root": true,
-  "extends": ["@react-native", "plugin:@tanstack/eslint-plugin-query/recommended"],
+  "extends": [
+    "@react-native",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
+  ],
   "plugins": ["import", "@tanstack/query"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
       "rules": {
         "import/order": [
           "error",
@@ -35,7 +43,9 @@
             "newlines-between": "always"
           }
         ]
-      }
+      },
+      // Test files only
+      "extends": ["plugin:testing-library/react"]
     }
   ]
 }

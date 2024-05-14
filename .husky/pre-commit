@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-bun lint-prettier
+yarn lint-prettier
 
-bun tsc --noEmit
+yarn tsc --noEmit
+
+yarn test --coverage
