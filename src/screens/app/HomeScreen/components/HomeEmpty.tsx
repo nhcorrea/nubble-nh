@@ -17,7 +17,7 @@ function handleMessage(error: unknown) {
   return error ? ERROS_MESSAGE : EMPTY_MESSAGE;
 }
 
-function Component({isLoading, isError, refresh}: Props): React.JSX.Element {
+function Component({isLoading, isError, refresh}: Props) {
   const {colors} = useAppTheme();
 
   if (isLoading) {
@@ -40,7 +40,7 @@ function Component({isLoading, isError, refresh}: Props): React.JSX.Element {
   );
 }
 
-export function HomeEmpty({...props}: Props): React.JSX.Element {
+export function HomeEmpty({...props}: Props) {
   return (
     <Box flex={1} justifyContent="center" alignItems="center">
       <Component {...props} />

@@ -8,10 +8,7 @@ interface Props {
   hasNextPage: boolean;
 }
 
-export function PostCommentBottom({
-  fetchNextPage,
-  hasNextPage,
-}: Props): React.JSX.Element | null {
+export function PostCommentBottom({fetchNextPage, hasNextPage}: Props) {
   if (!hasNextPage) {
     return null;
   }

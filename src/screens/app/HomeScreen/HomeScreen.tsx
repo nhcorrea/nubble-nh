@@ -18,7 +18,7 @@ import {AppTabScreensProps} from '@routes';
 import {HomeEmpty} from './components/HomeEmpty';
 import {HomeHeader} from './components/HomeHeader';
 
-function ItemSeparatorComponent(): React.JSX.Element {
+function ItemSeparatorComponent() {
   return <Box height={28} />;
 }
 
@@ -26,7 +26,7 @@ function keyExtractor(item: Post, index: number): string {
   return `${item.id}-${index}`;
 }
 
-function renderItem({item}: ListRenderItemInfo<Post>): React.JSX.Element {
+function renderItem({item}: ListRenderItemInfo<Post>) {
   return <PostItem post={item} />;
 }
 
@@ -34,7 +34,7 @@ function handleContentContainerStyle(length: number): ViewStyle {
   return length === 0 ? {flex: 1} : {flex: undefined};
 }
 
-function ListFooterComponent(isLoading: boolean): React.JSX.Element | null {
+function ListFooterComponent(isLoading: boolean) {
   if (isLoading) {
     return (
       <Box p="s16">
@@ -45,7 +45,7 @@ function ListFooterComponent(isLoading: boolean): React.JSX.Element | null {
   return null;
 }
 
-export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>): React.JSX.Element {
+export function HomeScreen({}: AppTabScreensProps<'HomeScreen'>) {
   const {list, fetchNextPage, ...rest} = usePostList();
   const {colors} = useAppTheme();
   const flatListReft = useRef<FlatList>(null);

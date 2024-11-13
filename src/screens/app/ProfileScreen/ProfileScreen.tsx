@@ -12,9 +12,7 @@ import {useUserGetById} from '@domain';
 import {Box, ScreenContainer, Text} from '@components';
 import {AppScreenProps} from '@routes';
 
-export function ProfileScreen({
-  route,
-}: AppScreenProps<'ProfileScreen'>): React.JSX.Element {
+export function ProfileScreen({route}: AppScreenProps<'ProfileScreen'>) {
   const {userId} = route.params;
   const {user, isError, isLoading, isFetching, refetch} =
     useUserGetById(userId);

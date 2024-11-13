@@ -9,7 +9,7 @@ interface Props {
   postId: number;
 }
 
-export function PostCommentTextMessage({postId}: Props): React.JSX.Element {
+export function PostCommentTextMessage({postId}: Props) {
   const [message, setMessage] = useState('');
   const {createComment} = usePostCommentCreate(postId, {
     onSuccess: () => {

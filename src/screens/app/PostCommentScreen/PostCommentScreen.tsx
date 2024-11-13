@@ -19,17 +19,17 @@ interface RenderItemProps
   postAuthorId: number;
 }
 
-function ItemSeparatorComponent(): React.JSX.Element {
+function ItemSeparatorComponent() {
   return <Box height={8} />;
 }
 
-function renderItem({item, ...props}: RenderItemProps): React.JSX.Element {
+function renderItem({item, ...props}: RenderItemProps) {
   return <PostCommentItem postComment={item} {...props} />;
 }
 
 export function PostCommentScreen({
   route,
-}: AppScreenProps<'PostCommentScreen'>): React.JSX.Element {
+}: AppScreenProps<'PostCommentScreen'>) {
   const {postId, postAuthorId} = route.params;
   const {bottom} = useAppSafeArea();
   const {spacing} = useAppTheme();

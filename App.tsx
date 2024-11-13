@@ -8,7 +8,7 @@ import {Router} from '@routes';
 
 initializeStorage(MMKVStorage);
 
-export function App(): React.JSX.Element {
+export function App() {
   return (
     <StateStack>
       <UtilityStack>

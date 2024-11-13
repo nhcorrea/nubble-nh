@@ -12,11 +12,7 @@ interface Props {
   postAuthorId: number;
 }
 
-export function PostCommentItem({
-  postId,
-  postComment,
-  postAuthorId,
-}: Props): React.JSX.Element {
+export function PostCommentItem({postId, postComment, postAuthorId}: Props) {
   const {
     author: {userName, profileURL},
     message,
