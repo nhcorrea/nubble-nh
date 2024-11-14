@@ -25,12 +25,12 @@ import {
   BorderProps,
 } from '@shopify/restyle';
 
-import {useAppTheme} from '@hooks';
-import {ThemeType} from '@theme';
-
 import {Text} from '../Text/Text';
 
 import {ButtonPresets, buttonPresets} from './buttonPresets';
+
+import {useAppTheme} from '#/hooks/useAppTheme';
+import {ThemeType} from '#/theme';
 
 type RestyleProps = BackgroundColorProps<ThemeType> &
   BackgroundColorShorthandProps<ThemeType> &

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, ImageStyle, useWindowDimensions} from 'react-native';
 
-import {Post} from '@domain';
+import {Post} from '#/domain/Post/postTypes';
 
 type Props = Pick<Post, 'imageURL'>;
 

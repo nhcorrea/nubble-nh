@@ -1,6 +1,6 @@
-import {dateUtils} from '@utils';
-
 import {PostComment, PostCommentAPI} from './postCommentTypes';
+
+import {dateUtils} from '#/utils/dateUtils';
 
 function toPostComment(postCommentApi: PostCommentAPI): PostComment {
   const {formatRelative} = dateUtils;

@@ -1,6 +1,6 @@
-import {AuthCredentials} from '@domain';
-
 import {storage} from './storage';
+
+import {AuthCredentials} from '#/domain/Auth/authTypes';
 
 const enum StorageKeys {
   AUTH_KEY = 'auth',

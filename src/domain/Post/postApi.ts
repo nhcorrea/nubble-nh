@@ -1,6 +1,7 @@
-import {api, PageAPI, PageParams} from '@api';
-
 import {PostAPI} from './postTypes';
+
+import {api} from '#/api/apiConfig';
+import {PageAPI, PageParams} from '#/api/apiTypes';
 
 export async function getList(params: PageParams): Promise<PageAPI<PostAPI>> {
   const response = await api.get<PageAPI<PostAPI>>('/user/post', {

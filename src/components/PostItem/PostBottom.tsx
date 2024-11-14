@@ -1,11 +1,13 @@
 import React from 'react';
 
-import {Post} from '@domain';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-import {Box, Text} from '@components';
-import {AppStackParamList} from '@routes';
+import {Box} from '../Box/Box';
+import {Text} from '../Text/Text';
+
+import {Post} from '#/domain/Post/postTypes';
+import {AppStackParamList} from '#/routes/routesTypes';
 
 type Props = Pick<Post, 'author' | 'commentCount' | 'text' | 'id'>;
 

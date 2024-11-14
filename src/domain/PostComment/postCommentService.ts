@@ -1,9 +1,9 @@
-import {apiAdapter} from '@api';
-import {Page} from '@types';
-
 import {postCommentAdapter} from './postCommentAdapter';
 import {postCommentApi} from './postCommentApi';
 import {PostComment} from './postCommentTypes';
+
+import {apiAdapter} from '#/api/apiAdapter';
+import {Page} from '#/types/Pages';
 
 const PER_PAGE = 5;
 

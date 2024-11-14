@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Svg, Path} from 'react-native-svg';
 
-import {useAppTheme} from '@hooks';
+import {useAppTheme} from '#/hooks/useAppTheme';
 
 interface Props {
   width?: number;

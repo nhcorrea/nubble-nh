@@ -1,10 +1,12 @@
 import React from 'react';
 import {Pressable} from 'react-native';
 
-import {Post} from '@domain';
+import {Box} from '../Box/Box';
+import {ProfileAvatar} from '../ProfileAvatar/ProfileAvatar';
+import {Text} from '../Text/Text';
 
-import {Box, ProfileAvatar, Text} from '@components';
-import {useAppNavigation} from '@hooks';
+import {Post} from '#/domain/Post/postTypes';
+import {useAppNavigation} from '#/hooks/useAppNavigation';
 
 type Props = Pick<Post, 'author'>;
 

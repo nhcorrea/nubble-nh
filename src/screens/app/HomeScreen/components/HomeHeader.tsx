@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {SimpleLogo} from '@brand';
-
-import {Box, BoxProps, Icon} from '@components';
-import {useAppSafeArea} from '@hooks';
+import {SimpleLogo} from '#/assets/brand/SimpleLogo';
+import {Box, BoxProps} from '#/components/Box/Box';
+import {Icon} from '#/components/Icon/Icon';
+import {useAppSafeArea} from '#/hooks/useAppSafeArea';
 
 export function HomeHeader() {
   const {top} = useAppSafeArea();

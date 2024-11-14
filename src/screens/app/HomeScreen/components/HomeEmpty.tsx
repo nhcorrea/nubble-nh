@@ -1,8 +1,10 @@
 import React from 'react';
 import {ActivityIndicator} from 'react-native';
 
-import {Box, Button, Text} from '@components';
-import {useAppTheme} from '@hooks';
+import {Box} from '#/components/Box/Box';
+import {Button} from '#/components/Button/Button';
+import {Text} from '#/components/Text/Text';
+import {useAppTheme} from '#/hooks/useAppTheme';
 
 interface Props {
   isLoading: boolean;

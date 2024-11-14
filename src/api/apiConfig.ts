@@ -1,5 +1,7 @@
-import {AuthCredentials, authService} from '@domain';
 import axios from 'axios';
+
+import {authService} from '#/domain/Auth/authService';
+import {AuthCredentials} from '#/domain/Auth/authTypes';
 
 interface RegisterInterceptorProps {
   authCredentials: AuthCredentials | null;
@@ -24,6 +26,7 @@ export function registerInterceptor({
       const failedRequest = err.config;
 
       const hasNotRefreshToken = !authCredentials?.refreshToken;
+
       const isRefreshTokenRequest = authService.isRefreshTokenRequest(
         err.config,
       );

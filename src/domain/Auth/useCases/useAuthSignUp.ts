@@ -1,7 +1,9 @@
-import {MutationOptions} from '@infra';
 import {useMutation} from '@tanstack/react-query';
 
-import {SignUpParams, authService} from '../index';
+import {authService} from '../authService';
+import {SignUpParams} from '../authTypes';
+
+import {MutationOptions} from '#/infra/hooks/useMutation';
 
 export function useAuthSignUp(options?: MutationOptions<void>) {
   const {mutate, isPending, isError} = useMutation<void, Error, SignUpParams>({

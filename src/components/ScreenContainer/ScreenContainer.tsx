@@ -1,12 +1,13 @@
 import React from 'react';
 import {KeyboardAvoidingView, Platform, StyleSheet} from 'react-native';
 
-import {useAppSafeArea, useAppTheme} from '@hooks';
-
 import {Box, BoxProps} from '../Box/Box';
 
 import {ScrollViewContainer, ViewContainer} from './Containers/Containers';
 import {ScreenHeader} from './Containers/ScreenHeader';
+
+import {useAppSafeArea} from '#/hooks/useAppSafeArea';
+import {useAppTheme} from '#/hooks/useAppTheme';
 
 interface Props extends BoxProps {
   children: React.ReactNode;

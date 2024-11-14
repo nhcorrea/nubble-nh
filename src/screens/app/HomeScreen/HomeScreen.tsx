@@ -7,16 +7,18 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import {Post, usePostList} from '@domain';
 import {useScrollToTop} from '@react-navigation/native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-import {ScreenContainer, PostItem, Box} from '@components';
-import {useAppTheme} from '@hooks';
-import {AppTabScreensProps} from '@routes';
-
 import {HomeEmpty} from './components/HomeEmpty';
 import {HomeHeader} from './components/HomeHeader';
+
+import {Box} from '#/components/Box/Box';
+import {PostItem} from '#/components/PostItem/PostItem';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {Post, usePostList} from '#/domain';
+import {useAppTheme} from '#/hooks';
+import {AppTabScreensProps} from '#/routes';
 
 function ItemSeparatorComponent() {
   return <Box height={28} />;

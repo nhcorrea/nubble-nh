@@ -1,8 +1,10 @@
-import {MutationOptions, QueryKeys} from '@infra';
 import {useMutation, useQueryClient} from '@tanstack/react-query';
 
-import {PostComment} from '..';
 import {postCommentService} from '../postCommentService';
+import {PostComment} from '../postCommentTypes';
+
+import {MutationOptions} from '#/infra/hooks/useMutation';
+import {QueryKeys} from '#/infra/infraTypes';
 
 export function usePostCommentCreate(
   postId: number,

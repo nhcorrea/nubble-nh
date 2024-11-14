@@ -1,10 +1,11 @@
 import React from 'react';
 import {Dimensions, StyleSheet} from 'react-native';
 
-import {Toast, ToastType} from '@services';
-
-import {Box, BoxProps, Icon, IconProps, Text} from '@components';
-import {shadowProps} from '@theme';
+import {Box, BoxProps} from '#/components/Box/Box';
+import {Icon, IconProps} from '#/components/Icon/Icon';
+import {Text} from '#/components/Text/Text';
+import {Toast, ToastType} from '#/services/toast/ToastTypes';
+import {shadowProps} from '#/theme';
 
 const MAX_WIDTH = Dimensions.get('window').width * 0.9;
 

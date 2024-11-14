@@ -1,7 +1,8 @@
-import {QueryKeys, usePaginatedList} from '@infra';
-
 import {postCommentService} from '../postCommentService';
 import {PostComment} from '../postCommentTypes';
+
+import {usePaginatedList} from '#/infra/hooks/usePaginatedList';
+import {QueryKeys} from '#/infra/infraTypes';
 
 export function usePostCommentList(postId: number) {
   function getList(page: number) {

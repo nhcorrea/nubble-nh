@@ -1,9 +1,11 @@
 import React from 'react';
 
-import {useAuthCredentials} from '@services';
-
-import {Box, Icon, ScreenContainer, Text} from '@components';
-import {AppTabScreensProps} from '@routes';
+import {Box} from '#/components/Box/Box';
+import {Icon} from '#/components/Icon/Icon';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {Text} from '#/components/Text/Text';
+import {AppTabScreensProps} from '#/routes/routesTypes';
+import {useAuthCredentials} from '#/services/auth/useAuthCredentials';
 
 export function MyProfileScreen({
   navigation,

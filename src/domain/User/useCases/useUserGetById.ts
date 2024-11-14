@@ -1,7 +1,8 @@
-import {QueryKeys} from '@infra';
 import {useQuery} from '@tanstack/react-query';
 
 import {userService} from '../userService';
+
+import {QueryKeys} from '#/infra/infraTypes';
 
 export function useUserGetById(id: number) {
   const {data, isLoading, refetch, isFetching, isError} = useQuery({

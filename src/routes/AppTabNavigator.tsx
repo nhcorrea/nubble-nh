@@ -5,15 +5,13 @@ import {
   BottomTabBarProps,
 } from '@react-navigation/bottom-tabs';
 
-import {
-  FavoriteScreen,
-  HomeScreen,
-  MyProfileScreen,
-  NewPostScreen,
-} from '@screens';
-
 import {AppTabBar} from './AppTabBar';
 import {AppBottomTabParamList} from './routesTypes';
+
+import {FavoriteScreen} from '#/screens/app/FavoriteScreen/FavoriteScreen';
+import {HomeScreen} from '#/screens/app/HomeScreen/HomeScreen';
+import {MyProfileScreen} from '#/screens/app/MyProfileScreen/MyProfileScreen';
+import {NewPostScreen} from '#/screens/app/NewPostScreen/NewPostScreen';
 
 const BottomTab = createBottomTabNavigator<AppBottomTabParamList>();
 

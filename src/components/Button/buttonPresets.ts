@@ -1,6 +1,6 @@
-import {ThemeType} from '@theme';
-
 import {TouchableOpacityBoxProps} from './Button';
+
+import {ThemeType} from '#/theme';
 
 interface ButtonUI {
   container: TouchableOpacityBoxProps;

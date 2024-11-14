@@ -9,12 +9,12 @@ import {
 
 import {BoxProps} from '@shopify/restyle';
 
-import {useAppTheme} from '@hooks';
-import {ThemeType} from '@theme';
-
 import {fontFamily, typography} from '../../theme/typography';
 import {Box} from '../Box/Box';
 import {Text} from '../Text/Text';
+
+import {useAppTheme} from '#/hooks/useAppTheme';
+import {ThemeType} from '#/theme';
 
 export interface TextInputProps extends RNTextInputProps {
   label: 'Email' | 'Senha' | string;

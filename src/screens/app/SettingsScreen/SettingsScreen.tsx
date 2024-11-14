@@ -1,9 +1,10 @@
 import React from 'react';
 
-import {useAuthSignOut} from '@domain';
-
-import {Button, ScreenContainer, Text} from '@components';
-import {AppStackScreensProps} from '@routes';
+import {Button} from '#/components/Button/Button';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {Text} from '#/components/Text/Text';
+import {useAuthSignOut} from '#/domain/Auth/useCases/useAuthSignOut';
+import {AppStackScreensProps} from '#/routes/routesTypes';
 
 export function SettingsScreen({
   navigation,

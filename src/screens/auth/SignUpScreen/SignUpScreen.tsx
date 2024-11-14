@@ -1,27 +1,25 @@
 import React from 'react';
 import {ActivityIndicator} from 'react-native';
 
-import {
-  useAuthIsEmailAvailable,
-  useAuthIsUsernameAvailable,
-  useAuthSignUp,
-} from '@domain';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
 
-import {
-  Box,
-  Button,
-  Text,
-  ScreenContainer,
-  FormTextInput,
-  FormPasswordInput,
-} from '@components';
-import {useResetNavigation} from '@hooks';
-import {AuthStackParamList} from '@routes';
-
 import {SignUpSchema, signUpSchema} from './signUpSchema';
 import {useAsyncValidation} from './useAsyncValidation';
+
+import {Box} from '#/components/Box/Box';
+import {Button} from '#/components/Button/Button';
+import {FormPasswordInput} from '#/components/Form/FormPasswordInput';
+import {FormTextInput} from '#/components/Form/FormTextInput';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {Text} from '#/components/Text/Text';
+import {useAuthSignUp} from '#/domain/Auth/useCases/useAuthSignUp';
+import {
+  useAuthIsEmailAvailable,
+  useAuthIsUsernameAvailable,
+} from '#/domain/Auth/useCases/useAuthValueIsAvailable';
+import {useResetNavigation} from '#/hooks/useResetNavigation';
+import {AuthStackParamList} from '#/routes/routesTypes';
 
 const RESET_PARAMS: AuthStackParamList['SuccessScreen'] = {
   title: 'Sua conta foi criada com sucesso!',

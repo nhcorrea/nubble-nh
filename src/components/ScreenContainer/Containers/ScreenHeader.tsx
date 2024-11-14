@@ -2,7 +2,10 @@ import React from 'react';
 
 import {useNavigation} from '@react-navigation/native';
 
-import {Box, Icon, Text, TouchableOpacityBox} from '@components';
+import {Box} from '#/components/Box/Box';
+import {TouchableOpacityBox} from '#/components/Button/Button';
+import {Icon} from '#/components/Icon/Icon';
+import {Text} from '#/components/Text/Text';
 
 interface Props {
   canGoBack?: boolean;

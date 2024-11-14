@@ -1,8 +1,11 @@
 import React from 'react';
 
-import {Post} from '@domain';
+import {Box} from '../Box/Box';
+import {TouchableOpacityBox} from '../Button/Button';
+import {Icon, IconProps} from '../Icon/Icon';
+import {Text} from '../Text/Text';
 
-import {Box, TouchableOpacityBox, Text, Icon, IconProps} from '@components';
+import {Post} from '#/domain/Post/postTypes';
 
 interface PostIconProps {
   iconName: {

@@ -5,11 +5,12 @@ import React, {
   useState,
 } from 'react';
 
-import {registerInterceptor} from '@api';
-import {AuthCredentials, authService} from '@domain';
-
-import {AuthCredentialsService} from '../';
+import {AuthCredentialsService} from '../authCredentialsType';
 import {authStorage} from '../authStorage';
+
+import {registerInterceptor} from '#/api/apiConfig';
+import {authService} from '#/domain/Auth/authService';
+import {AuthCredentials} from '#/domain/Auth/authTypes';
 
 export const AuthCredentialsContext = createContext<AuthCredentialsService>({
   authCredentials: null,

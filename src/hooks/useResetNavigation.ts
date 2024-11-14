@@ -1,6 +1,6 @@
-import {AuthStackParamList} from '@routes';
-
 import {useAuthNavigation} from './useAuthNavigation';
+
+import {AuthStackParamList} from '#/routes/routesTypes';
 
 export function useResetNavigation() {
   const navigation = useAuthNavigation();

@@ -1,7 +1,10 @@
 import React from 'react';
 
-import {Button, Text, ScreenContainer, Icon} from '@components';
-import {AuthScreenProps} from '@routes';
+import {Button} from '#/components/Button/Button';
+import {Icon} from '#/components/Icon/Icon';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {Text} from '#/components/Text/Text';
+import {AuthScreenProps} from '#/routes/routesTypes';
 
 export function SuccessScreen({
   navigation,

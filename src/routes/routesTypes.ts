@@ -5,7 +5,7 @@ import {
 } from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-import {IconProps} from '@components';
+import {IconProps} from '#/components/Icon/Icon';
 
 type RouteNamesAuth = keyof AuthStackParamList;
 type RouteNamesApp = keyof AppStackParamList;

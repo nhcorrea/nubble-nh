@@ -1,5 +1,6 @@
-import {IconProps} from '@components';
-import {AppBottomTabParamList} from '@routes';
+import {AppBottomTabParamList} from './routesTypes';
+
+import {IconProps} from '#/components/Icon/Icon';
 
 interface ScreenName {
   label: string;

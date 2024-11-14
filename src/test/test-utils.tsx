@@ -3,7 +3,7 @@ import React, {PropsWithChildren, ReactElement} from 'react';
 import {ThemeProvider} from '@shopify/restyle';
 import {RenderOptions, render} from '@testing-library/react-native';
 
-import {theme} from '@theme';
+import {theme} from '#/theme';
 
 export function AllProviders({children}: PropsWithChildren) {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;

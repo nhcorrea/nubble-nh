@@ -1,9 +1,9 @@
-import {QueryKeys} from '@infra';
 import {useQuery} from '@tanstack/react-query';
 
-import {useDebounce} from '@hooks';
-
 import {authService} from '../authService';
+
+import {useDebounce} from '#/hooks/useDebounce';
+import {QueryKeys} from '#/infra/infraTypes';
 
 interface Props<T extends {length: number}> {
   value: T;

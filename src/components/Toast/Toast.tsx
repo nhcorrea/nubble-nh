@@ -1,9 +1,10 @@
 import React, {useCallback, useEffect, useRef} from 'react';
 import {Animated, ViewStyle} from 'react-native';
 
-import {useToast, useToastService, ToastPosition} from '@services';
-
 import {ToastContent} from './components/ToastContent';
+
+import {ToastPosition} from '#/services/toast/ToastTypes';
+import {useToast, useToastService} from '#/services/toast/useToast';
 
 const DEFAULT_DURATION = 3000;
 

@@ -1,10 +1,11 @@
 import React from 'react';
 
-import {ContextStackProvider, StateStack, UtilityStack} from '@providers';
-import {initializeStorage, MMKVStorage} from '@services';
-
-import {Toast} from '@components';
-import {Router} from '@routes';
+import {Toast} from '#/components/Toast/Toast';
+import {ContextStackProvider} from '#/providers/ContextStack';
+import {StateStack} from '#/providers/StateStack';
+import {UtilityStack} from '#/providers/UtilityStack';
+import {Router} from '#/routes/Routes';
+import {initializeStorage, MMKVStorage} from '#/services/auth';
 
 initializeStorage(MMKVStorage);
 

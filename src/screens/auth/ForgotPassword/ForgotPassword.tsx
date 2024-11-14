@@ -1,18 +1,21 @@
 import React from 'react';
 
-import {useAuthForgotPassword} from '@domain';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {useToastService} from '@services';
 import {useForm} from 'react-hook-form';
-
-import {Button, ScreenContainer, Text, FormTextInput} from '@components';
-import {useResetNavigation} from '@hooks';
-import {AuthStackParamList} from '@routes';
 
 import {
   ForgotPasswordSchema,
   forgotPasswordSchema,
 } from './forgotPasswordSchema';
+
+import {Button} from '#/components/Button/Button';
+import {FormTextInput} from '#/components/Form/FormTextInput';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {Text} from '#/components/Text/Text';
+import {useAuthForgotPassword} from '#/domain/Auth/useCases/useAuthForgotPassword';
+import {useResetNavigation} from '#/hooks/useResetNavigation';
+import {AuthStackParamList} from '#/routes/routesTypes';
+import {useToastService} from '#/services/toast/useToast';
 
 const RESET_PARAMS: AuthStackParamList['SuccessScreen'] = {
   title: `Enviamos as${'\n'} instruções para seu e-mail`,

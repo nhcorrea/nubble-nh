@@ -1,5 +1,6 @@
-import {dateUtils} from '@utils';
 import {Duration, add, sub} from 'date-fns';
+
+import {dateUtils} from '../dateUtils';
 
 const MOCKED_NOW = () => 1713227451;
 

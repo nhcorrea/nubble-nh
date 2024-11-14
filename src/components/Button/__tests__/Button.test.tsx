@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
-import {theme} from '@theme';
-
 import {render, fireEvent, screen} from '../../../test/test-utils';
 import {Button, ButtonProps} from '../Button';
+
+import {theme} from '#/theme';
 
 function renderComponent(props: ButtonProps) {
   return render(<Button {...props} />);

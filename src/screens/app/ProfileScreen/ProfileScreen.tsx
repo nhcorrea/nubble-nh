@@ -7,10 +7,11 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import {useUserGetById} from '@domain';
-
-import {Box, ScreenContainer, Text} from '@components';
-import {AppScreenProps} from '@routes';
+import {Box} from '#/components/Box/Box';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {Text} from '#/components/Text/Text';
+import {useUserGetById} from '#/domain/User/useCases/useUserGetById';
+import {AppScreenProps} from '#/routes/routesTypes';
 
 export function ProfileScreen({route}: AppScreenProps<'ProfileScreen'>) {
   const {userId} = route.params;
@@ -24,8 +25,7 @@ export function ProfileScreen({route}: AppScreenProps<'ProfileScreen'>) {
         <Text variant="paragraphMedium">Erro ao carregar perfil</Text>
       )}
       <ScrollView
-        // eslint-disable-next-line react-native/no-inline-styles
-        style={{flex: 1}}
+        style={styles.scrollView}
         refreshControl={
           <RefreshControl onRefresh={refetch} refreshing={isFetching} />
         }>
@@ -50,5 +50,8 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 32,
+  },
+  scrollView: {
+    flex: 1,
   },
 });

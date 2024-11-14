@@ -1,7 +1,8 @@
-import {MutationOptions} from '@infra';
 import {useMutation} from '@tanstack/react-query';
 
 import {authService} from '../authService';
+
+import {MutationOptions} from '#/infra/hooks/useMutation';
 
 export function useAuthForgotPassword(options?: MutationOptions<string>) {
   const {mutate, isPending} = useMutation<string, Error, string>({

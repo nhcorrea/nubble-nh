@@ -1,7 +1,9 @@
 import React from 'react';
 
-import {Button, ScreenContainer, Text} from '@components';
-import {AppTabScreensProps} from '@routes';
+import {Button} from '#/components/Button/Button';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {Text} from '#/components/Text/Text';
+import {AppTabScreensProps} from '#/routes/routesTypes';
 
 export function NewPostScreen({
   navigation,

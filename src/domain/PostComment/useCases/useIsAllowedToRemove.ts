@@ -1,5 +1,5 @@
-import {PostComment} from '..';
 import {postCommentService} from '../postCommentService';
+import {PostComment} from '../postCommentTypes';
 
 export function useIsAllowedToRemove(
   postComment: PostComment,

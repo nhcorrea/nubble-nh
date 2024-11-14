@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import {Keyboard} from 'react-native';
 
-import {usePostCommentCreate} from '@domain';
-
-import {TextMessage} from '@components';
+import {TextMessage} from '#/components/TextMessage/TextMessage';
+import {usePostCommentCreate} from '#/domain';
 
 interface Props {
   postId: number;

@@ -1,22 +1,20 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 
-import {useAuthSignIn} from '@domain';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {useToastService} from '@services';
 import {useForm} from 'react-hook-form';
 
-import {
-  FormTextInput,
-  FormPasswordInput,
-  Box,
-  Button,
-  Text,
-  ScreenContainer,
-} from '@components';
-import {AuthScreenProps} from '@routes';
-
 import {LoginSchema, loginSchema} from './loginSchema';
+
+import {Box} from '#/components/Box/Box';
+import {Button} from '#/components/Button/Button';
+import {FormPasswordInput} from '#/components/Form/FormPasswordInput';
+import {FormTextInput} from '#/components/Form/FormTextInput';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {Text} from '#/components/Text/Text';
+import {useAuthSignIn} from '#/domain/Auth/useCases/useAuthSignIn';
+import {AuthScreenProps} from '#/routes/routesTypes';
+import {useToastService} from '#/services/toast/useToast';
 
 export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
   function navigateToSignUp() {

@@ -1,10 +1,13 @@
 import React from 'react';
 import {Alert, Pressable} from 'react-native';
 
-import {PostComment, useIsAllowedToRemove, usePostCommentRemove} from '@domain';
-import {useToastService} from '@services';
-
-import {Box, ProfileAvatar, Text} from '@components';
+import {Box} from '#/components/Box/Box';
+import {ProfileAvatar} from '#/components/ProfileAvatar/ProfileAvatar';
+import {Text} from '#/components/Text/Text';
+import {PostComment} from '#/domain/PostComment/postCommentTypes';
+import {useIsAllowedToRemove} from '#/domain/PostComment/useCases/useIsAllowedToRemove';
+import {usePostCommentRemove} from '#/domain/PostComment/useCases/usePostCommentRemove';
+import {useToastService} from '#/services/toast/useToast';
 
 interface Props {
   postId: number;

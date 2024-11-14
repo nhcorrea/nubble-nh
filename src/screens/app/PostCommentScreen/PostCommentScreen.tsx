@@ -1,17 +1,17 @@
 import React from 'react';
 import {FlatList, ListRenderItemInfo} from 'react-native';
 
-import {PostComment, usePostCommentList} from '@domain';
+import {PostCommentBottom} from './components/PostCommentBottom';
+import {PostCommentItem} from './components/PostCommentItem';
+import {PostCommentTextMessage} from './components/PostCommentTextMessage';
 
-import {Box, ScreenContainer} from '@components';
-import {useAppSafeArea, useAppTheme} from '@hooks';
-import {AppScreenProps} from '@routes';
-
-import {
-  PostCommentBottom,
-  PostCommentItem,
-  PostCommentTextMessage,
-} from './components';
+import {Box} from '#/components/Box/Box';
+import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
+import {PostComment} from '#/domain/PostComment/postCommentTypes';
+import {usePostCommentList} from '#/domain/PostComment/useCases/usePostCommentList';
+import {useAppSafeArea} from '#/hooks/useAppSafeArea';
+import {useAppTheme} from '#/hooks/useAppTheme';
+import {AppScreenProps} from '#/routes/routesTypes';
 
 interface RenderItemProps
   extends Omit<ListRenderItemInfo<PostComment>, 'index' | 'separators'> {
