@@ -16,9 +16,10 @@ import {HomeHeader} from './components/HomeHeader';
 import {Box} from '#/components/Box/Box';
 import {PostItem} from '#/components/PostItem/PostItem';
 import {ScreenContainer} from '#/components/ScreenContainer/ScreenContainer';
-import {Post, usePostList} from '#/domain';
-import {useAppTheme} from '#/hooks';
-import {AppTabScreensProps} from '#/routes';
+import {Post} from '#/domain/Post/postTypes';
+import {usePostList} from '#/domain/Post/useCases/usePostList';
+import {useAppTheme} from '#/hooks/useAppTheme';
+import {AppTabScreensProps} from '#/routes/routesTypes';
 
 function ItemSeparatorComponent() {
   return <Box height={28} />;

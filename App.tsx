@@ -5,7 +5,8 @@ import {ContextStackProvider} from '#/providers/ContextStack';
 import {StateStack} from '#/providers/StateStack';
 import {UtilityStack} from '#/providers/UtilityStack';
 import {Router} from '#/routes/Routes';
-import {initializeStorage, MMKVStorage} from '#/services/auth';
+import {MMKVStorage} from '#/services/auth/MMKVStorage';
+import {initializeStorage} from '#/services/auth/storage';
 
 initializeStorage(MMKVStorage);
 
