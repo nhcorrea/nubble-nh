@@ -11,10 +11,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		4CF701B4232357E076BD5068 /* libPods-nubblenh-nubblenhTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE45E1741344F1C5959D01B /* libPods-nubblenh-nubblenhTests.a */; };
 		6132EF182BDFF13200BBE14D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 6132EF172BDFF13200BBE14D /* PrivacyInfo.xcprivacy */; };
+		614F9EF1FC696B69B66F17A1 /* libPods-nubblenh-nubblenhTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D5FD3C9DE28800B6B7728A /* libPods-nubblenh-nubblenhTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		F32C33518F33AE44D54B0B1D /* libPods-nubblenh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 038B0EA33DF36805EF58106A /* libPods-nubblenh.a */; };
+		DB8A319AE98EBCAF360C6B2A /* libPods-nubblenh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5727954F11C6C50E9037B3A /* libPods-nubblenh.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,18 +31,18 @@
 		00E356EE1AD99517003FC87E /* nubblenhTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nubblenhTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* nubblenhTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nubblenhTests.m; sourceTree = "<group>"; };
-		038B0EA33DF36805EF58106A /* libPods-nubblenh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nubblenh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0719C72BB657180745BEECC1 /* Pods-nubblenh-nubblenhTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubblenh-nubblenhTests.debug.xcconfig"; path = "Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* nubblenh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nubblenh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = nubblenh/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = nubblenh/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = nubblenh/main.m; sourceTree = "<group>"; };
-		273506CD5154603D2705E40A /* Pods-nubblenh-nubblenhTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubblenh-nubblenhTests.debug.xcconfig"; path = "Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests.debug.xcconfig"; sourceTree = "<group>"; };
-		493CA141440A23CF0C052566 /* Pods-nubblenh-nubblenhTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubblenh-nubblenhTests.release.xcconfig"; path = "Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests.release.xcconfig"; sourceTree = "<group>"; };
+		4BAF8F36FBF9BE5444C48858 /* Pods-nubblenh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubblenh.debug.xcconfig"; path = "Target Support Files/Pods-nubblenh/Pods-nubblenh.debug.xcconfig"; sourceTree = "<group>"; };
 		6132EF172BDFF13200BBE14D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = NubbleNH/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = nubblenh/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A4E03BFD21E7C727EAEE8595 /* Pods-nubblenh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubblenh.release.xcconfig"; path = "Target Support Files/Pods-nubblenh/Pods-nubblenh.release.xcconfig"; sourceTree = "<group>"; };
-		DAE45E1741344F1C5959D01B /* libPods-nubblenh-nubblenhTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nubblenh-nubblenhTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E32970E4672D820A5722015B /* Pods-nubblenh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubblenh.debug.xcconfig"; path = "Target Support Files/Pods-nubblenh/Pods-nubblenh.debug.xcconfig"; sourceTree = "<group>"; };
+		C05DD460EFD26F6131C8B006 /* Pods-nubblenh-nubblenhTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubblenh-nubblenhTests.release.xcconfig"; path = "Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests.release.xcconfig"; sourceTree = "<group>"; };
+		C9D5FD3C9DE28800B6B7728A /* libPods-nubblenh-nubblenhTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nubblenh-nubblenhTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5727954F11C6C50E9037B3A /* libPods-nubblenh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nubblenh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8814AF46E95FBD8BB5A1C4E /* Pods-nubblenh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubblenh.release.xcconfig"; path = "Target Support Files/Pods-nubblenh/Pods-nubblenh.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF701B4232357E076BD5068 /* libPods-nubblenh-nubblenhTests.a in Frameworks */,
+				614F9EF1FC696B69B66F17A1 /* libPods-nubblenh-nubblenhTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F32C33518F33AE44D54B0B1D /* libPods-nubblenh.a in Frameworks */,
+				DB8A319AE98EBCAF360C6B2A /* libPods-nubblenh.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				038B0EA33DF36805EF58106A /* libPods-nubblenh.a */,
-				DAE45E1741344F1C5959D01B /* libPods-nubblenh-nubblenhTests.a */,
+				D5727954F11C6C50E9037B3A /* libPods-nubblenh.a */,
+				C9D5FD3C9DE28800B6B7728A /* libPods-nubblenh-nubblenhTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,10 +127,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E32970E4672D820A5722015B /* Pods-nubblenh.debug.xcconfig */,
-				A4E03BFD21E7C727EAEE8595 /* Pods-nubblenh.release.xcconfig */,
-				273506CD5154603D2705E40A /* Pods-nubblenh-nubblenhTests.debug.xcconfig */,
-				493CA141440A23CF0C052566 /* Pods-nubblenh-nubblenhTests.release.xcconfig */,
+				4BAF8F36FBF9BE5444C48858 /* Pods-nubblenh.debug.xcconfig */,
+				E8814AF46E95FBD8BB5A1C4E /* Pods-nubblenh.release.xcconfig */,
+				0719C72BB657180745BEECC1 /* Pods-nubblenh-nubblenhTests.debug.xcconfig */,
+				C05DD460EFD26F6131C8B006 /* Pods-nubblenh-nubblenhTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -142,12 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "nubblenhTests" */;
 			buildPhases = (
-				3D46B0826F1A9704F7416123 /* [CP] Check Pods Manifest.lock */,
+				3ECBA2D2D811DB5B82881A95 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				81E9EECEB6D73239EE67811D /* [CP] Embed Pods Frameworks */,
-				378E8938F84EFD502815E09A /* [CP] Copy Pods Resources */,
+				2308566D74A058DA5CB6129C /* [CP] Embed Pods Frameworks */,
+				8E53145FE2E144FBB7A710B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,13 +163,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "nubblenh" */;
 			buildPhases = (
-				BFEB43F1C6241FF4DF058E49 /* [CP] Check Pods Manifest.lock */,
+				4C4EF847FCF340C7323B084C /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				F03B19C3D442BDA6BDD05E30 /* [CP] Embed Pods Frameworks */,
-				0CE0195F67708AC68FFD4E63 /* [CP] Copy Pods Resources */,
+				032DF5D5BA38E6BC1CC865D0 /* [CP] Embed Pods Frameworks */,
+				C3E9A0AEAAA362C788D75C57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,41 +253,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		0CE0195F67708AC68FFD4E63 /* [CP] Copy Pods Resources */ = {
+		032DF5D5BA38E6BC1CC865D0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		378E8938F84EFD502815E09A /* [CP] Copy Pods Resources */ = {
+		2308566D74A058DA5CB6129C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3D46B0826F1A9704F7416123 /* [CP] Check Pods Manifest.lock */ = {
+		3ECBA2D2D811DB5B82881A95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,24 +309,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		81E9EECEB6D73239EE67811D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BFEB43F1C6241FF4DF058E49 /* [CP] Check Pods Manifest.lock */ = {
+		4C4EF847FCF340C7323B084C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,21 +331,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F03B19C3D442BDA6BDD05E30 /* [CP] Embed Pods Frameworks */ = {
+		8E53145FE2E144FBB7A710B1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nubblenh-nubblenhTests/Pods-nubblenh-nubblenhTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3E9A0AEAAA362C788D75C57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nubblenh/Pods-nubblenh-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -398,7 +398,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 273506CD5154603D2705E40A /* Pods-nubblenh-nubblenhTests.debug.xcconfig */;
+			baseConfigurationReference = 0719C72BB657180745BEECC1 /* Pods-nubblenh-nubblenhTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -425,7 +425,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 493CA141440A23CF0C052566 /* Pods-nubblenh-nubblenhTests.release.xcconfig */;
+			baseConfigurationReference = C05DD460EFD26F6131C8B006 /* Pods-nubblenh-nubblenhTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -449,7 +449,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E32970E4672D820A5722015B /* Pods-nubblenh.debug.xcconfig */;
+			baseConfigurationReference = 4BAF8F36FBF9BE5444C48858 /* Pods-nubblenh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -476,7 +476,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4E03BFD21E7C727EAEE8595 /* Pods-nubblenh.release.xcconfig */;
+			baseConfigurationReference = E8814AF46E95FBD8BB5A1C4E /* Pods-nubblenh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -571,6 +571,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				USE_HERMES = true;
 			};
 			name = Debug;
